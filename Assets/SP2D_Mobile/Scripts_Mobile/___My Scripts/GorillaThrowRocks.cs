@@ -53,6 +53,11 @@ namespace Bitboys.SuperPlaftormer2D
                     IsEnemyFire();
 
                 }
+                if (scene.name== "Level 5_Mobile")
+                {
+                    IsEnemyFire();
+
+                }
         
         }
         private void OnTriggerExit2D(Collider2D collision)

@@ -15,7 +15,7 @@ D:/GitHub/FoxRun
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54742
+57233
 Successfully changed project path to: D:/GitHub/FoxRun
 D:/GitHub/FoxRun
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/GitHub/FoxRun
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 141.40 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 105.19 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -63,91 +63,91 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56716
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007596 seconds.
+Registered in 0.006981 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 108.99 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 85.91 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.311 seconds
+- Completed reload, in  0.829 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1311ms)
-		BeginReloadAssembly (543ms)
+	ReloadAssembly (829ms)
+		BeginReloadAssembly (157ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (628ms)
-			LoadAssemblies (539ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (154ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (166ms)
+			SetupTypeCache (132ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (358ms)
+			SetupLoadedEditorAssemblies (312ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (77ms)
+				InitializePlatformSupportModulesInManaged (64ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (109ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (113ms)
-				ProcessInitializeOnLoadMethodAttributes (56ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (109ms)
+				ProcessInitializeOnLoadMethodAttributes (51ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007494 seconds.
+Registered in 0.007131 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.29 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.23 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  1.348 seconds
+- Completed reload, in  1.343 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1349ms)
-		BeginReloadAssembly (243ms)
+	ReloadAssembly (1344ms)
+		BeginReloadAssembly (236ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (129ms)
-		EndReloadAssembly (960ms)
-			LoadAssemblies (107ms)
+			CreateAndSetChildDomain (128ms)
+		EndReloadAssembly (973ms)
+			LoadAssemblies (93ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (241ms)
+			SetupTypeCache (248ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (69ms)
-			SetupLoadedEditorAssemblies (497ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (524ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
+				InitializePlatformSupportModulesInManaged (20ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (76ms)
-				ProcessInitializeOnLoadAttributes (221ms)
-				ProcessInitializeOnLoadMethodAttributes (174ms)
-				AfterProcessingInitializeOnLoad (7ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (240ms)
+				ProcessInitializeOnLoadMethodAttributes (154ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.33 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.17 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2941 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 73 unused Assets / (57.9 KB). Loaded Objects now: 3381.
-Memory consumption went from 112.4 MB to 112.4 MB.
-Total: 7.695700 ms (FindLiveObjects: 0.269600 ms CreateObjectMapping: 0.212800 ms MarkObjects: 7.101400 ms  DeleteObjects: 0.110600 ms)
+Unloading 73 unused Assets / (57.8 KB). Loaded Objects now: 3388.
+Memory consumption went from 113.2 MB to 113.1 MB.
+Total: 7.852300 ms (FindLiveObjects: 0.251100 ms CreateObjectMapping: 0.220800 ms MarkObjects: 7.273900 ms  DeleteObjects: 0.105400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -161,7 +161,774 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 239272.365264 seconds.
-  path: Assets/icon.png
-  artifactKey: Guid(54aa515e459c1534480f42400a7a79c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/icon.png using Guid(54aa515e459c1534480f42400a7a79c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23021c892d23c0efbe0e7f7ecd941fcc') in 0.233453 seconds 
+  Time since last request: 255593.022812 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png
+  artifactKey: Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png using Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f15bafbd31359ed639aea51ba6b25cdb') in 0.096114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.231153 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png
+  artifactKey: Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png using Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a792911afc6b320655b1b38f8e547cb6') in 0.019454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.575252 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png
+  artifactKey: Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png using Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6490d7fba39b2a856a74a7038197f90') in 0.137201 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.523091 seconds.
+  path: Assets/SP2D_Mobile/Animations_Mobile/DragonEnemy.controller
+  artifactKey: Guid(271a9ade93e9de546a7a48cfe9a032aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SP2D_Mobile/Animations_Mobile/DragonEnemy.controller using Guid(271a9ade93e9de546a7a48cfe9a032aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8c110b883351df4d29be12a8930aacd') in 0.034787 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007417 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.30 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.561 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1562ms)
+		BeginReloadAssembly (218ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (17ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (67ms)
+		EndReloadAssembly (1215ms)
+			LoadAssemblies (120ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (311ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (674ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (279ms)
+				ProcessInitializeOnLoadMethodAttributes (279ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.58 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2909 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (26.3 KB). Loaded Objects now: 3399.
+Memory consumption went from 114.5 MB to 114.4 MB.
+Total: 10.062700 ms (FindLiveObjects: 0.278300 ms CreateObjectMapping: 0.201000 ms MarkObjects: 9.484600 ms  DeleteObjects: 0.096800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 54.088619 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png
+  artifactKey: Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png using Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c603089317c0d42452f6fe56d47e1256') in 0.106775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.966737 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png
+  artifactKey: Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png using Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2276b8d0277cd30ff8e0d8485eb5bb7') in 0.072577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png
+  artifactKey: Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png using Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd891abd5b9c059f1d1cd30497b642e0e') in 0.050318 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png
+  artifactKey: Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png using Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2876a6008bf72c47cde1ab07e8f656e6') in 0.060034 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png
+  artifactKey: Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png using Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8225229b496dff6fa643d8b3affd2ea3') in 0.062190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png
+  artifactKey: Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png using Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d82eb947134791394a7b100142a932') in 0.057548 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png
+  artifactKey: Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png using Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d622951817343c029e49a4c45bf9ee2') in 0.056659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png
+  artifactKey: Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png using Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60bc8dbda210ba87e3bc9048855c0f4d') in 0.058967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png
+  artifactKey: Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png using Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '603cad17bf435240c60ab2d1a8ac9f47') in 0.060492 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png
+  artifactKey: Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png using Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df99699c5af6f4bb6a3c71c43ccb0f5b') in 0.049693 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png
+  artifactKey: Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png using Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfc0ea70625baea84d1f836b7b5d69c7') in 0.051431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png
+  artifactKey: Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png using Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a447fd14cfc37089eaf5ee22fdd44f8') in 0.052194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png
+  artifactKey: Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png using Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e39bb376c0f24853a639f3e510a2efac') in 0.057064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png
+  artifactKey: Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png using Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a12b4c2f01a9d11521c4195e3b0d5e84') in 0.053011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png
+  artifactKey: Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png using Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbdb09304396e02e276bbe11d22b9499') in 0.058941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png
+  artifactKey: Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png using Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6a789918ebb4f5fd1a657b0f0c923b') in 0.049212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png
+  artifactKey: Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png using Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '483a557ecd3621994c8dd95a42576d30') in 0.048204 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png
+  artifactKey: Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png using Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df5a36b76625b548609dbcea0760fb7') in 0.054678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png
+  artifactKey: Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png using Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5121f8eb3dc60d1324bb4d3afa4855d') in 0.047885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.446098 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png
+  artifactKey: Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png using Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca01875ab43174d719c7dc3e780c254c') in 0.047512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.029497 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png
+  artifactKey: Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png using Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f569858dd4eee27f22f3bddf17f12f4b') in 0.055361 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png
+  artifactKey: Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png using Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7bc1ec7054a32ae1506b82eb22197d0') in 0.055493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png
+  artifactKey: Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png using Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8d1304072d103affc735d693abc001e') in 0.071176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png
+  artifactKey: Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png using Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5afc46b706dfa48875eb7db84399e70') in 0.046185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png
+  artifactKey: Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png using Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bdc73f2f3694800738291a65855b060') in 0.063800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png
+  artifactKey: Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png using Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45c6ba4b72d569c10eba5aa733e3d591') in 0.060540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png
+  artifactKey: Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png using Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e58e910e0e429a13e86cbeb0865b0eb') in 0.053034 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png
+  artifactKey: Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png using Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c2b0cf38f9342903a96a588f1a129e9') in 0.059157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png
+  artifactKey: Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png using Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a81a246685482a7a82b0329954b455f') in 0.058275 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png
+  artifactKey: Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png using Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f015173304f878ff02406004bf9e7f3') in 0.048273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png
+  artifactKey: Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png using Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '847e4260bdd494f80080b325807af814') in 0.045911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png
+  artifactKey: Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png using Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18cb67499465920f7d171b1965c274af') in 0.057588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png
+  artifactKey: Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png using Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f84a09123a55a58aae67d49730dce02') in 0.056134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png
+  artifactKey: Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png using Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74da5539310f8600be75449175ee19ce') in 0.056895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png
+  artifactKey: Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png using Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d24c155562e0d3e4bff9ffd0a631aa7') in 0.056706 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png
+  artifactKey: Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png using Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d167a120c83fbc9ac024653f75fd316') in 0.052499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png
+  artifactKey: Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png using Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd914fad5e3289ede69d7d9410bb13df5') in 0.059456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png
+  artifactKey: Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png using Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b953faca9c324ee05c559ded46f56033') in 0.055489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png
+  artifactKey: Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png using Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed2b2dff394cd5506b049c5c2e84634c') in 0.052980 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007567 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.593 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1596ms)
+		BeginReloadAssembly (173ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (46ms)
+		EndReloadAssembly (1288ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (286ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (681ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (39ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (99ms)
+				ProcessInitializeOnLoadAttributes (282ms)
+				ProcessInitializeOnLoadMethodAttributes (248ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 9.28 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2909 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (26.5 KB). Loaded Objects now: 3402.
+Memory consumption went from 114.5 MB to 114.5 MB.
+Total: 10.857600 ms (FindLiveObjects: 0.293200 ms CreateObjectMapping: 0.268700 ms MarkObjects: 10.233600 ms  DeleteObjects: 0.060000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006409 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.55 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.436 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2439ms)
+		BeginReloadAssembly (173ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (50ms)
+		EndReloadAssembly (2138ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (307ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (1532ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (345ms)
+				ProcessInitializeOnLoadMethodAttributes (1041ms)
+				AfterProcessingInitializeOnLoad (28ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (26ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 18.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2909 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (26.4 KB). Loaded Objects now: 3405.
+Memory consumption went from 114.5 MB to 114.5 MB.
+Total: 14.422400 ms (FindLiveObjects: 0.744700 ms CreateObjectMapping: 0.613000 ms MarkObjects: 13.010000 ms  DeleteObjects: 0.053300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 177.384949 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png
+  artifactKey: Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png using Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7b20890c47ef7311b029fd82c6a1091') in 0.124989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png
+  artifactKey: Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png using Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53961a01cdf6b56feb5a449f5565db18') in 0.058702 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png
+  artifactKey: Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png using Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f50e10cd71f4aa637443ac1f43fc0163') in 0.050590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png
+  artifactKey: Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png using Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13eb2006a4dcefdbddcbfb73985027ff') in 0.061192 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png
+  artifactKey: Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png using Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '659f56ecfe8b8a4e81e02fecb0a2f827') in 0.054902 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png
+  artifactKey: Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png using Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20d5471749c6ecf9c016d9306ca24aa9') in 0.059346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png
+  artifactKey: Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png using Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '163fc03f2b306fe2feb5e2faf1c77193') in 0.064842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png
+  artifactKey: Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png using Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90e6319b5968c2c009f13249820a3f17') in 0.052592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png
+  artifactKey: Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png using Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e51216d1427e933df55ab591e731f7a5') in 0.059236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png
+  artifactKey: Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png using Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b04628c6e2ebb16821827af7e4db0835') in 0.044595 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png
+  artifactKey: Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png using Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa89ac766bf0ccb0c40c85b81995df90') in 0.048127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png
+  artifactKey: Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png using Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d710ba92cee44085e3118c9da935bf') in 0.053788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png
+  artifactKey: Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png using Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ee9c3d67efeddc96980d32ef3b6456a') in 0.051436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png
+  artifactKey: Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png using Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1da492e13c171b45d35def5557635352') in 0.079707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png
+  artifactKey: Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png using Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '215b60d8828ed16d01e8f1f4e88f854a') in 0.051111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png
+  artifactKey: Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png using Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b56790ddfa2510d6fc8bbe3548828d6') in 0.053769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png
+  artifactKey: Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png using Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac800b4b6a23a1a7cde259bc48ef42f3') in 0.054284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png
+  artifactKey: Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png using Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa3ec8adefa24f511eae4981e32467b8') in 0.052525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png
+  artifactKey: Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png using Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101ad18ac7a4904dbc8776fe755aac95') in 0.051248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png
+  artifactKey: Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png using Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fd370b493ddd21db744245b0b40ccad') in 0.051052 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.540178 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png
+  artifactKey: Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_01.png using Guid(1689de17252fef9429be85b126359ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694676d3455f0f71bddfda5ef2d56777') in 0.067339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png
+  artifactKey: Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_07.png using Guid(175948ee7ed8c0542be3717ce14bfb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f171c46a43f7cefa69415be2a2bcb233') in 0.053303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png
+  artifactKey: Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_02.png using Guid(50eb59c8d5e1a884da5b838dd080d640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a67934a4cd60111f48363fda2bea1fc') in 0.079517 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png
+  artifactKey: Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_05.png using Guid(4644c99a31644fe418c7c3bbc92d1da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bd452a1501c436209f884d551b529e3') in 0.045317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png
+  artifactKey: Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_10.png using Guid(3ea4e521d5569ec428f549b2d425c91a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27597235d69b8fb8de7a151640badb3a') in 0.057696 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png
+  artifactKey: Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_03.png using Guid(3b2738aac47c0a343a0007d12f39cc97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6679e06def9b751452b1c6aa76ab8249') in 0.062704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png
+  artifactKey: Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_11.png using Guid(65b2bfcb311da4947926924fe9c104ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd408ce5c60ea9a0223ca15db7da03d70') in 0.048711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png
+  artifactKey: Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_12.png using Guid(cd470ee6e3eb0974dab75c30032fd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab31057ebd24f1811751708db784dcb0') in 0.053780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png
+  artifactKey: Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_08.png using Guid(50a9e18cbdae04f4f9305d275d2e10d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4307f658f408e84306b6a866742c1f94') in 0.050501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png
+  artifactKey: Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_16.png using Guid(0679881050f9ee042b3bd6d05531a8c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3417e8b278abd7d5546ecdb1b9e8c028') in 0.049635 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png
+  artifactKey: Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_18.png using Guid(8c40a6b3dc2e8cd4c89f782eb1d1c7fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ad49ed03c9c17aed25c077a86367af8') in 0.050974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png
+  artifactKey: Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_00.png using Guid(cb1c63fa939b5d94a8020cd10ff031be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe1e7daf211db618d1cc64bc0dd3413') in 0.048776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png
+  artifactKey: Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_19.png using Guid(130f0565cb0f72245ab5053605938087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2957b79f3a3f51ee950311d34654a19') in 0.054590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png
+  artifactKey: Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_17.png using Guid(3b836c39725c9024a832d272b1f136e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00f3518c8bd25f58d1c2de5480eb1dd3') in 0.054617 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png
+  artifactKey: Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_04.png using Guid(9769726875c6cd541bb686d5186da15e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a64cd4fc7e07c03c35e08eeabc0623ac') in 0.054208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png
+  artifactKey: Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_09.png using Guid(5fa5d5de52752ad49ba1f87e574eabdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ad4451851b356285aa56929b17d36d') in 0.061223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png
+  artifactKey: Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_13.png using Guid(799f342d55dd09445a301f897c3d873b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c5bb9827c77af21b482a58424e7f03f') in 0.050274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png
+  artifactKey: Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_06.png using Guid(a4a151632aa4f3e4b8aaa5ecd1f0f33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6148ddda77a75efdf4ddb305caae9fa') in 0.049261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png
+  artifactKey: Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_14.png using Guid(1911612adb98ebc499f522db0f236ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54dd14d750947398464b02f0d281a5da') in 0.051243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png
+  artifactKey: Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/___SLICING/__My Assets/Player/Dragon/DragonFly/Dragon-DragonFly_15.png using Guid(ebf73d4c6c4ec894ea7b6349b675220f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f76beaa51f9264ca870e3d611a3299e') in 0.052207 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007550 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.546 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1547ms)
+		BeginReloadAssembly (181ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (43ms)
+		EndReloadAssembly (1153ms)
+			LoadAssemblies (131ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (264ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (655ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (28ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (271ms)
+				ProcessInitializeOnLoadMethodAttributes (270ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 52.99 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2909 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (26.4 KB). Loaded Objects now: 3408.
+Memory consumption went from 114.6 MB to 114.6 MB.
+Total: 11.561900 ms (FindLiveObjects: 0.293200 ms CreateObjectMapping: 0.277900 ms MarkObjects: 10.951200 ms  DeleteObjects: 0.038000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006922 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 2.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.891 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2894ms)
+		BeginReloadAssembly (186ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (17ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (52ms)
+		EndReloadAssembly (2530ms)
+			LoadAssemblies (117ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (455ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (100ms)
+			SetupLoadedEditorAssemblies (1677ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (114ms)
+				ProcessInitializeOnLoadAttributes (878ms)
+				ProcessInitializeOnLoadMethodAttributes (615ms)
+				AfterProcessingInitializeOnLoad (31ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (31ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 26.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2909 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (26.4 KB). Loaded Objects now: 3411.
+Memory consumption went from 114.6 MB to 114.6 MB.
+Total: 19.659800 ms (FindLiveObjects: 0.371300 ms CreateObjectMapping: 0.378200 ms MarkObjects: 18.794700 ms  DeleteObjects: 0.114000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

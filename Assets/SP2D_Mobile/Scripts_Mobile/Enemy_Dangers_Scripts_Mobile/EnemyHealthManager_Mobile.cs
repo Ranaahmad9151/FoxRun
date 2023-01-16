@@ -114,7 +114,6 @@ namespace Bitboys.SuperPlaftormer2D {
 				/*
 				SoundManager.instance.bettleZone.enabled = false;
 				SoundManager.instance.gamePlay.enabled = true;*/
-				FirePooling.instance.RemoveFirePool();
 				//isFire = false;
 				foreach (Collider2D col in GetComponents<Collider2D>())
 				{
@@ -128,6 +127,12 @@ namespace Bitboys.SuperPlaftormer2D {
 					this.gameObject.GetComponent<Transform>().position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 7 * Time.deltaTime * 0.3f);
 
 				}
+                if (scene.name == "Level 5_Mobile")
+                {
+					this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+					this.GetComponent<FlyingEnemiesGroup_Mobile>().enabled = false;
+                }
+                FirePooling.instance.RemoveFirePool();
 				yield return new WaitForSeconds(3);
 				Destroy(gameObject);// finally destroy this object.
 				Instantiate(deathEffect, transform.position, transform.rotation); // if the enemy dies we instantiate the death effect particles.

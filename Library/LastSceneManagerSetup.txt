@@ -1,1 +1,5 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/SP2D_Mobile/Scenes_Mobile/Level 5_Mobile.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
