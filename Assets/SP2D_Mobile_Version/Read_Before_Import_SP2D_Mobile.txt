@@ -1,0 +1,5 @@
+In order to work with the Super Platformer 2D Mobile version you have to delete the “SP2D” Desktop version folder before to import the "SP2D_Mobile.unitypackge" 
+
+Also you can import the SP2D_Mobile version in a new empty project.
+
+Delete UnityPack.cs script before make an Android Build.

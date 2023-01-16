@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d98a7d5ea3bdb2541bd7667212a6444b
+timeCreated: 1514357833
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Antonio
+  fontNames:
+  - Antonio
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 254fb39af42a2b74eb98970f30213370, type: 3}
+  - {fileID: 12800000, guid: 06673dfc5c9277d4b8dd7bd3edbcdaf2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

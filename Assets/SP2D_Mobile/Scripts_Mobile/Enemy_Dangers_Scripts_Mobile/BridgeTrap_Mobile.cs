@@ -1,0 +1,18 @@
+﻿using UnityEngine;
+using System.Collections;
+
+namespace Bitboys.SuperPlaftormer2D {
+	
+public class BridgeTrap_Mobile : MonoBehaviour {
+
+		// If the player collides with this object the Hinge Joint component will be disabled to can create the effect that the rope has broken.
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+	if (coll.gameObject.tag == "Player") {
+	this.gameObject.GetComponent<HingeJoint2D> ().enabled = false;
+}
+}
+}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////// SUPER PLATFORMER 2D By Bitboys //////////////////////////////////////////////////////////////////////////////////////////////////////
