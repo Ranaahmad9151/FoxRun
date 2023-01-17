@@ -36,8 +36,8 @@ public class AgentMovement : MonoBehaviour
     void SetAgentPosition()
     {
         //agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
-        //agent.SetDestination(target);
-        var angle = Mathf.Atan2(target.x, target.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        agent.SetDestination(target);
+        /*var angle = Mathf.Atan2(target.x, target.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);*/
     }
 }
