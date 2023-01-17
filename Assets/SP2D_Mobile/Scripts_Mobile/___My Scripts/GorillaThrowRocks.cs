@@ -43,6 +43,11 @@ namespace Bitboys.SuperPlaftormer2D
                 {
                 StartCoroutine(GorillaThrowRocks.instance.FireRate());
                  }
+                if (scene.name == "Level 2_Mobile")
+                {
+                    IsEnemyFire();
+
+                }
                 if (scene.name== "Level 3_Mobile")
                 {
                     IsEnemyFire();
