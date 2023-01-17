@@ -68,8 +68,11 @@ namespace Bitboys.SuperPlaftormer2D {
         public void giveDamage(int damageToGive)
 	{
 			enemyHealth -= damageToGive; // substract the enemy energy.
-			//shakeController.ShakeCamera(0.3f, 0.3f); // This will shake the camera when the player takes damage.
-			HealthBar.instance.slider.value = enemyHealth;
+										 //shakeController.ShakeCamera(0.3f, 0.3f); // This will shake the camera when the player takes damage.
+			if (this.gameObject.name == ("Boss"))
+			{
+				HealthBar.instance.slider.value = enemyHealth;
+			}
 			AudioSource.PlayClipAtPoint (knockBackSfx, Camera.main.transform.position, knockBackSfxVolume); // the sound we use whenever the enemy recieves an impact.
 			StartCoroutine(Flash(_flashSpeed, _lengthOfTimeToFlash)); // we activate the flash coroutine to make the enemy flash.
 			if(this.gameObject.name=="Boss")
