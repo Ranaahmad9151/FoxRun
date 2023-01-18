@@ -128,7 +128,7 @@ namespace Bitboys.SuperPlaftormer2D {
 				if (scene.name == "Level 2_Mobile")
 				{
 					this.gameObject.GetComponent<Transform>().position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 7 * Time.deltaTime * 0.3f);
-
+					this.GetComponent<AgentMovement>().enabled = false;
 				}
                 if (scene.name == "Level 5_Mobile")
                 {

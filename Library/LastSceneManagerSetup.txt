@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/SP2D_Mobile/Scenes_Mobile/Level 2_Mobile.unity
+- path: Assets/SP2D_Mobile/Scenes_Mobile/Level 3_Mobile.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

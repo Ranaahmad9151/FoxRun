@@ -313,6 +313,7 @@
     <Compile Include="Assets\Help Me!\Scripts\StreamVideo.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Utilities\UISelectableExtension.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
+    <Compile Include="Assets\NavMeshPlus-master\AgentMovement.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Utilities\ScrollRectLinker.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Controls\ColorPicker\ColorValues.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Effects\CylinderText.cs" />
@@ -380,7 +381,6 @@
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\GorillaThrowRocks.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Door_Mobile.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Fish_Mobile.cs" />
-    <Compile Include="Assets\NavMeshPlus-master\AgentMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Help Me!\unity-ui-extensions\Shaders\UIAdditive.shader" />

@@ -51,8 +51,7 @@ namespace Bitboys.SuperPlaftormer2D
                 if (scene.name== "Level 3_Mobile")
                 {
                     IsEnemyFire();
-
-                }
+            }
                 if (scene.name== "Level 4_Mobile")
                 {
                     IsEnemyFire();
