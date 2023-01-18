@@ -861,6 +861,16 @@ namespace Bitboys.SuperPlaftormer2D
                 Instantiate(hitParticle, transform.position, transform.rotation);
             }
         }
+        public ParticleSystem sandParticles;
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if(collision.gameObject.CompareTag("Mud"))
+            {
+                sandParticles.Emit(5);// Here we activate the jump particles.
+                //Instantiate(sandParticles, transform.position, transform.rotation);
+                Debug.Log("MUD");
+            }
+        }
 
         // This collision use is to ensure that when the character is on a platform we stay on it.
         void OnCollisionExit2D(Collision2D other)

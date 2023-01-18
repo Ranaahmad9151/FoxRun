@@ -381,6 +381,7 @@
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\GorillaThrowRocks.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Door_Mobile.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Fish_Mobile.cs" />
+    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\RopeControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Help Me!\unity-ui-extensions\Shaders\UIAdditive.shader" />
