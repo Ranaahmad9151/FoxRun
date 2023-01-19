@@ -39,13 +39,13 @@ namespace Bitboys.SuperPlaftormer2D
 				transform.localScale = new Vector3(-1f, 1f, 1f); // when the enemy touches a wall or reach an edge we change its move direction.
 
 				GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-				EnemiesTarget.isMoveRight = true;
+				//EnemiesTarget.isMoveRight = true;
 			}
 			else
 			{
 				transform.localScale = new Vector3(1f, 1f, 1f);
 				GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-				EnemiesTarget.isMoveRight = false;
+				//EnemiesTarget.isMoveRight = false;
 			}
 		}
 	}

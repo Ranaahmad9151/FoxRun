@@ -28,7 +28,7 @@ namespace Bitboys.SuperPlaftormer2D
         public void IsEnemyFire()
         {
 
-            StartCoroutine(GorillaThrowRocks.instance.FireRate());
+            StartCoroutine(FireRate());
 
         }
         private void OnTriggerStay2D(Collider2D collision)
@@ -36,33 +36,34 @@ namespace Bitboys.SuperPlaftormer2D
 
             if (collision.gameObject.tag == "Player")
             {
-                
+
                 isAnimationChange = true;
-                }
-                if (scene.name== "Level 1_Mobile")
-                {
-                StartCoroutine(GorillaThrowRocks.instance.FireRate());
-                 }
-                if (scene.name == "Level 2_Mobile")
-                {
-                    IsEnemyFire();
-
-                }
-                if (scene.name== "Level 3_Mobile")
-                {
-                    IsEnemyFire();
             }
-                if (scene.name== "Level 4_Mobile")
-                {
-                    IsEnemyFire();
+            if (scene.name == "Level 1_Mobile")
+            {
+                IsEnemyFire();
+            }
+            if (scene.name == "Level 2_Mobile")
+            {
 
-                }
-                if (scene.name== "Level 5_Mobile")
-                {
-                    IsEnemyFire();
+                IsEnemyFire();
 
-                }
-        
+            }
+            if (scene.name == "Level 3_Mobile")
+            {
+                IsEnemyFire();
+            }
+            if (scene.name == "Level 4_Mobile")
+            {
+                IsEnemyFire();
+
+            }
+            if (scene.name == "Level 5_Mobile")
+            {
+                IsEnemyFire();
+
+            }
+
         }
         private void OnTriggerExit2D(Collider2D collision)
         {

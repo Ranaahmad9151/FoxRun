@@ -465,8 +465,6 @@ namespace Bitboys.SuperPlaftormer2D
             if (controllerActive == true && Input.GetKeyDown(KeyCode.Space) && isGrounded && !touchingLeftWall && !touchingRightWall || controllerActive == true && CrossPlatformInputManager.GetButtonDown("Jump") && isGrounded && !touchingLeftWall && !touchingRightWall)
             {
                 Jump();
-                /*if (isJump)
-                {
                     if (isJump)
                     {
                         foreach (GameObject wall in wallTags)
@@ -475,20 +473,9 @@ namespace Bitboys.SuperPlaftormer2D
                             Debug.Log("Collider Diseable");
                         }
                     }
-                }*/
-                /*else
-                {
-                    if (!isJump)
-                    {
-                        foreach (GameObject wall in wallTags)
-                        {
-                            wall.SetActive(true);
-                            Debug.Log("Collider Enable");
-                        }
-                    }
-                }*/
+                    
 
-                    if (!inWaterZone)
+                if (!inWaterZone)
                 {
                     JumpParticles.Emit(20);// Here we activate the jump particles.
                     if (controllerActive == true && Input.GetKeyDown(KeyCode.Space) || controllerActive == true && CrossPlatformInputManager.GetButtonDown("Jump"))
@@ -643,7 +630,6 @@ namespace Bitboys.SuperPlaftormer2D
             {
 
                 walking = true;
-                
             }
             else
             {
@@ -742,7 +728,29 @@ namespace Bitboys.SuperPlaftormer2D
                 allGemsCollected = false;
             }
         }
-
+        public bool upperGrounded;
+        public bool grounded;
+        IEnumerator WallsCollider()
+        {
+            if(upperGrounded)
+            {
+                yield return new WaitForSeconds(0.5f);
+                foreach (GameObject wall in wallTags)
+                {
+                    wall.SetActive(true);
+                    Debug.Log("Upper Collider Enable");
+                }
+            }
+            else if(grounded)
+            {
+                yield return new WaitForSeconds(5);
+                foreach (GameObject wall in wallTags)
+                {
+                    wall.SetActive(true);
+                    Debug.Log("Ground Collider Enable");
+                }
+            }   
+        }
         // SHOOT, WALL JUMP, JUMP AND DOUBLE JUMP FUNCTIONS // 
         void Shoot()
         {
@@ -754,10 +762,10 @@ namespace Bitboys.SuperPlaftormer2D
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpForce);
             wallJumpParticles.Emit(5); // Set the wall jump particle amount that we want to emit when the player leaves a wall.
         }
-        //public bool isJump;
+        public bool isJump;
         public void Jump()
         {
-            //isJump = true;
+            isJump = true;
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight); // We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
             
         }
@@ -808,7 +816,16 @@ namespace Bitboys.SuperPlaftormer2D
 
         void OnCollisionEnter2D(Collision2D coll)
         {
-            
+            if(coll.transform.tag==("Ground"))
+            {
+                grounded = true;
+                StartCoroutine(WallsCollider());
+            }
+            if(coll.transform.tag==("UpperGround")&& !upperGrounded)
+            {
+                upperGrounded = true;
+                StartCoroutine(WallsCollider());
+            }
             //Grounded collision, particles and sound effects.
             // If the player touches the ground and is not walking and is not goin up but is ending fall.
             if (coll.transform.tag == ("Ground") && !walking && !goUp && falling)
@@ -888,345 +905,308 @@ namespace Bitboys.SuperPlaftormer2D
                 transform.parent = null; // When the player leaves the platform this function is automatically disabled.
             }
             //NOT TOUCHING WALL ... EXIT!!
-
-        }
-
-        // if the player collides with a gem we automatically activate the bool function of each gem that we touch.
-        
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            // if the player is placed over the object that have this script, automatically will be within a door zone.
-            if (other.transform.tag == "Door")
+            if (other.transform.tag == ("UpperGround"))
             {
-                door.playerInZone = true;
+                upperGrounded = true;
             }
 
-            if (other.transform.tag == "RedGem")
-                redDiamond = true; // We have the red gem
-            if (other.transform.tag == "YellowGem")
-                yellowDiamond = true;// We have the yellow gem
-            if (other.transform.tag == "BlueGem")
-                blueDiamond = true;// We have the blue gem
-            if (other.transform.tag == "LilaGem")
-                lilaDiamond = true;// We have the lila gem
-            if (other.transform.tag == "GreenGem")
-                greenDiamond = true;// We have the green gem
+            // if the player collides with a gem we automatically activate the bool function of each gem that we touch.
 
-            // particles are emitted when we touch a health item.
-            if (other.transform.tag == "HealthItem")
-                healthParticle.gameObject.GetComponent<ParticleSystem>().Play();
-
-            // particles spawned on the ui token when we pick up a token.
-            if (other.transform.tag == "Token")
-                tokenParticles.gameObject.GetComponent<ParticleSystem>().Play();
-
-
-            // INS SLOPE FREEZZE//
-            // this collision warns us that we are in an slope in order to freeze the character motion and not begin to slide down the slope.
-            if (other.transform.tag == ("Slope"))
+            void OnTriggerEnter2D(Collider2D other)
             {
-                inSlope = true;
-            }
-
-            // MOVING PLATFORM PARENTING // 
-            // This collision warns us that we are in a moving platform and parent the character and the platform to ensure that the character follows platform movement.
-            if (other.transform.tag == "MovingPlatform")
-            {
-                GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.None;
-                transform.parent = other.transform;
-            }
-
-            // DOLLY ZOOM ZONES COLLISION// 
-            //If collides with a "Dolly Zoom zone" the "Zoom in" function of the camera is activated thus creating the camera's dolly zoom smooth effect.
-            if (other.transform.tag == "DollyZoom")
-            {
-                dolly.inDollyZoomZone = true;
-
-            }
-
-            // know if the player is placed over the water object.
-            if (other.transform.tag == "Water")
-            {
-                inWaterZone = true;
-            }
-            // know if the player hits the water effects activator and starts playing the water particles.
-            if (other.transform.tag == "Water_Trigger" && !falling)
-            {
-                Instantiate(waterParticles, waterEffects.transform.position, waterEffects.transform.rotation);
-            }
-            // know if the player hits the water effects activator and starts playing the water particles.
-            if (other.transform.tag == "Water_Trigger" && falling)
-            {
-                Instantiate(waterEnterParticles, waterEffects.transform.position, waterEffects.transform.rotation);
-            }
-
-           
-
-        }
-        //We use the "onTriggerExit2D" function to indicate the character that has stopped touching the ground, a wall .... And so to stop emitting particles or to call other functions.
-        void OnTriggerExit2D(Collider2D other)
-        {
-            
-            if (other.transform.tag == "Door")
-            {
-                door.playerInZone = false;
-            }
-            #region deadarea
-            // TOUCHING WALLS//
-            /*Debug.Log("123" + other.transform.name);
-            if (other.transform.name == ("LeftWall"))
-            {
-              
-                Debug.Log("1234");
-                touchingLeftWall = true; // We set the tounching left wall bool to true.
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234"+ touchingLeftWall);
-                if (AxisTouchButton.instance.isPressed == true *//*&& AxisTouchButton.instance.axisValue==-1*//*)
+                // if the player is placed over the object that have this script, automatically will be within a door zone.
+                if (other.transform.tag == "Door")
                 {
-                    Debug.Log("Left 1234");
-                    player.transform.rotation = Quaternion.EulerAngles(0, 0, -90);
+                    door.playerInZone = true;
                 }
-            }
-            else if (other.transform.name == ("RightWall"))
-            {
-                touchingRightWall = true;// We set the tounching right wall bool to true.
-                if (AxisTouchButton.instance.isPressed == true)
+
+                if (other.transform.tag == "RedGem")
+                    redDiamond = true; // We have the red gem
+                if (other.transform.tag == "YellowGem")
+                    yellowDiamond = true;// We have the yellow gem
+                if (other.transform.tag == "BlueGem")
+                    blueDiamond = true;// We have the blue gem
+                if (other.transform.tag == "LilaGem")
+                    lilaDiamond = true;// We have the lila gem
+                if (other.transform.tag == "GreenGem")
+                    greenDiamond = true;// We have the green gem
+
+                // particles are emitted when we touch a health item.
+                if (other.transform.tag == "HealthItem")
+                    healthParticle.gameObject.GetComponent<ParticleSystem>().Play();
+
+                // particles spawned on the ui token when we pick up a token.
+                if (other.transform.tag == "Token")
+                    tokenParticles.gameObject.GetComponent<ParticleSystem>().Play();
+
+
+                // INS SLOPE FREEZZE//
+                // this collision warns us that we are in an slope in order to freeze the character motion and not begin to slide down the slope.
+                if (other.transform.tag == ("Slope"))
                 {
-                    player.transform.rotation = Quaternion.EulerAngles(0, 0, 90);
-                    Debug.Log("Right");
+                    inSlope = true;
                 }
-            }*/
-            #endregion
-            if (other.transform.tag == ("Slope"))
-            {
-                inSlope = false;
-                UnfreezeConstraints();
-                if (!walking)
+
+                // MOVING PLATFORM PARENTING // 
+                // This collision warns us that we are in a moving platform and parent the character and the platform to ensure that the character follows platform movement.
+                if (other.transform.tag == "MovingPlatform")
                 {
-                    GameObject go = this.transform.Find("LandedParticles").gameObject;
+                    GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.None;
+                    transform.parent = other.transform;
+                }
+
+                // DOLLY ZOOM ZONES COLLISION// 
+                //If collides with a "Dolly Zoom zone" the "Zoom in" function of the camera is activated thus creating the camera's dolly zoom smooth effect.
+                if (other.transform.tag == "DollyZoom")
+                {
+                    dolly.inDollyZoomZone = true;
+
+                }
+
+                // know if the player is placed over the water object.
+                if (other.transform.tag == "Water")
+                {
+                    inWaterZone = true;
+                }
+                // know if the player hits the water effects activator and starts playing the water particles.
+                if (other.transform.tag == "Water_Trigger" && !falling)
+                {
+                    Instantiate(waterParticles, waterEffects.transform.position, waterEffects.transform.rotation);
+                }
+                // know if the player hits the water effects activator and starts playing the water particles.
+                if (other.transform.tag == "Water_Trigger" && falling)
+                {
+                    Instantiate(waterEnterParticles, waterEffects.transform.position, waterEffects.transform.rotation);
+                }
+
+
+
+            }
+            //We use the "onTriggerExit2D" function to indicate the character that has stopped touching the ground, a wall .... And so to stop emitting particles or to call other functions.
+            void OnTriggerExit2D(Collider2D other)
+            {
+
+                if (other.transform.tag == "Door")
+                {
+                    door.playerInZone = false;
+                }
+                #region deadarea
+                // TOUCHING WALLS//
+                /*Debug.Log("123" + other.transform.name);
+                if (other.transform.name == ("LeftWall"))
+                {
+
+                    Debug.Log("1234");
+                    touchingLeftWall = true; // We set the tounching left wall bool to true.
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234"+ touchingLeftWall);
+                    if (AxisTouchButton.instance.isPressed == true *//*&& AxisTouchButton.instance.axisValue==-1*//*)
+                    {
+                        Debug.Log("Left 1234");
+                        player.transform.rotation = Quaternion.EulerAngles(0, 0, -90);
+                    }
+                }
+                else if (other.transform.name == ("RightWall"))
+                {
+                    touchingRightWall = true;// We set the tounching right wall bool to true.
+                    if (AxisTouchButton.instance.isPressed == true)
+                    {
+                        player.transform.rotation = Quaternion.EulerAngles(0, 0, 90);
+                        Debug.Log("Right");
+                    }
+                }*/
+                #endregion
+                if (other.transform.tag == ("Slope"))
+                {
+                    inSlope = false;
+                    UnfreezeConstraints();
+                    if (!walking)
+                    {
+                        GameObject go = this.transform.Find("LandedParticles").gameObject;
+                        go.SetActive(false);
+                        landedParticles.Emit(0);
+                    }
+                }
+                if (other.transform.tag == ("Ground") && !walking)
+                {
+                    GameObject go = this.transform.Find("GroundedParticles").gameObject;
                     go.SetActive(false);
-                    landedParticles.Emit(0);
-                }
-            }
-            if (other.transform.tag == ("Ground") && !walking)
-            {
-                GameObject go = this.transform.Find("GroundedParticles").gameObject;
-                go.SetActive(false);
-                groundedparticles.Emit(0);
+                    groundedparticles.Emit(0);
 
-
-            }
-           /* if (other.transform.tag == ("UpperGround") && !walking)
-            {
-                ColliderTransformatiion.isUpperGround = true;
-                GameObject go = this.transform.Find("GroundedParticles").gameObject;
-                go.SetActive(false);
-                groundedparticles.Emit(0);
-               *//* ColliderTransformatiion.wall.enabled = true;
-                ColliderTransformatiion.ground.enabled = false;*//*
-            }*/
-            if (other.transform.name == ("LeftWall"))
-            {
-                touchingLeftWall = false;
-
-                player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                /*if(wallCheck == true)
-                {
-                    player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                }*/
-
-            }
-            if (other.transform.name == ("RightWall"))
-            {
-                touchingRightWall = false;
-
-                player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("Right Wall Rotation Reset");
-                /*if (wallCheck == true)
-                {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90);
-                }*/
-            }
-            if(other.CompareTag("UpperGround"))
-            {
-                if (playerGraphics.localScale.x < 0)
-                {
-                    print("UpperGround : -1");
-                    //               player.transform.position += new Vector3(-0.4f, 0, 0);
-                    player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x - 0.4f, player.transform.position.y, 0), 0.2f);
 
                 }
-                else
-                {
-                    player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x + 0.4f, player.transform.position.y, 0), 0.3f);
-                }  // player.transform.position += new Vector3(0.25f,0, 0);
-                // player.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            if (other.transform.tag == "MovingPlatform")
-            {
-                GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
-                transform.parent = null;
-            }
-            if (other.transform.tag == "DollyZoom")
-            {
-                dolly.inDollyZoomZone = false;
-            }
-
-            // know if the player is placed over the water object.
-            if (other.transform.tag == "Water")
-            {
-                inWaterZone = false;
-            }
-
-        }
-        
-        //We use the "onTrigger`2D" function to indicate the character that it's still touching the ground, a wall ....
-        //Vector3 lastPos = new Vector3(0,0,0);
-        void OnTriggerStay2D(Collider2D other)
-        {
-            if (other.CompareTag("Wall"))
-            {
-                float y;
-                if (playerGraphics.localScale.x > 0) y = 1.25f;
-                else y = -1.25f;
-
-                RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f, 0));
-                Debug.DrawRay(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f,0), Color.red);
-                Debug.Log(hit.collider.name);
-                if (hit.collider.CompareTag("UpperGround"))
-                {
-                    //Debug.Break();
-                    print("Hit UpperGround");
-                    player.transform.DOMove(new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90);
-                    //iTween.MoveAdd(player.gameObject, new Vector3(1, 2.5f, 0), 0f);
-                    //player.transform.position += new Vector3(1, 2.5f, 0);
-                    walking = true;
-
-                    //this.gameObject.transform.position = hit.transform.position;
-                }
-                else if (hit.collider.CompareTag("Ground"))
-                {
-                    //Debug.Break();
-                    print("Hit Ground");
-                    player.transform.position += new Vector3(-0.15f, 0, 0);
-                    player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    walking = true;
-
-                    //this.gameObject.transform.position = hit.transform.position;
-                }
-                //if (transform.position == lastPos)
-                //{
-                //    //Exit
-                //    print("Exit");
-                //    player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                //}
-                //lastPos = transform.position;
-            }
-
-            /*if(other.CompareTag("Ground"))
-            {
-                foreach (GameObject wall in wallTags)
-                {
-                    wall.SetActive(true);
-                    Debug.Log("Collider Enable");
-                }
-            }
-            if(other.CompareTag("UpperGround"))
-            {
-                foreach (GameObject wall in wallTags)
-                {
-                    wall.SetActive(true);
-                    Debug.Log("Collider Enable");
-                }
-            }*/
-
-
-            if (other.transform.tag == "Door")
-            {
-                door.playerInZone = true;
-            }
-
-            if (other.transform.tag == ("Slope"))
-            {
-                inSlope = true;
-            }
-            //This collision warns us that we are in a moving platform and parent the character and the platform to ensure that the character follows platform movement.
-            if (other.transform.tag == "MovingPlatform")
-            {
-                GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.None;
-                transform.parent = other.transform;
-
-            }
-            // If we stay within a zone dolly zoom zoom I will set us until we leave it.
-            if (other.transform.tag == "DollyZoom")
-            {
-                dolly.inDollyZoomZone = true;
-            }
-            // know if the player is placed over the water object.
-            if (other.transform.tag == "Water")
-            {
-                inWaterZone = true;
-            }
-            if (other.transform.name == ("LeftWall")&& wallCheck==true)
-            {
-
-                touchingLeftWall = true; // We set the tounching left wall bool to true.
-                /*if(touchingLeftWall==true)
-                {
-                    player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                    walking = true;
-                   // other.gameObject.GetComponent<Collider2D>().transform.localScale = new Vector3(0, 0.9f, 0);
-                    ///*other.gameObject.GetComponent<Collider2D>().bounds.Contains(GameObject.FindGameObjectWithTag("Wall").gameObject.transform.position.y) = new Vector2(0, 15f);
-                }*/
-                /*Debug.Log("1234");
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.axisValue);
-                *///if (AxisTouchButton.instance.axisValue == -1)
-                  //{
-                  //player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                  //Debug.Log("Left");
-                  //}
-            } 
-            if (other.transform.name == ("RightWall") && wallCheck == true)
-            {
-
-                touchingRightWall = true; // We set the tounching left wall bool to true.
-
-                if (touchingRightWall == true)
-                {
-                    Debug.Log("Right Wall Rotation");
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90);
-                    walking = true;
-
-                }
-                /* if (other.gameObject.name == ("RightWall"))
+                /* if (other.transform.tag == ("UpperGround") && !walking)
                  {
-                     if(GetComponent<Collider2D>().bounds.Contains(GameObject.FindGameObjectWithTag("Wall").gameObject.transform.position))
-                     {
-
-                     }
-
-                     *//*if (other.gameObject.GetComponent<Collider2D>().bounds.Contains(other.bounds.size) && other.gameObject.GetComponent<Collider2D>().bounds.Contains(other.bounds.size))
-                     {
-                         print("On Top");
-                     }
-                     else
-                     {
-                         Debug.Log("Down");
-                     }*//*
+                     ColliderTransformatiion.isUpperGround = true;
+                     GameObject go = this.transform.Find("GroundedParticles").gameObject;
+                     go.SetActive(false);
+                     groundedparticles.Emit(0);
+                    *//* ColliderTransformatiion.wall.enabled = true;
+                     ColliderTransformatiion.ground.enabled = false;*//*
                  }*/
-                //player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                /*Debug.Log("1234");
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.axisValue);
-                *///if (AxisTouchButton.instance.axisValue == -1)
-                  //{
-                  //player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                  //Debug.Log("Left");
-                  //}
+                if (other.transform.name == ("LeftWall"))
+                {
+                    touchingLeftWall = false;
+
+                    player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    /*if(wallCheck == true)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    }*/
+
+                }
+                if (other.transform.name == ("RightWall"))
+                {
+                    touchingRightWall = false;
+
+                    player.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+
+                    player.transform.SetPositionAndRotation(player.transform.position, player.transform.rotation);
+
+                    Debug.Log("Right Wall Rotation Reset");
+                    /*if (wallCheck == true)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    }*/
+                }
+                if (other.CompareTag("UpperGround"))
+                {
+                    if (playerGraphics.localScale.x < 0)
+                    {
+                        player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x - 0.4f, player.transform.position.y, 0), 0.2f);
+                    }
+                    else
+                    {
+                        player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x + 0.4f, player.transform.position.y, 0), 0.3f);
+                    }
+                }
+                if (other.transform.tag == "MovingPlatform")
+                {
+                    GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
+                    transform.parent = null;
+                }
+                if (other.transform.tag == "DollyZoom")
+                {
+                    dolly.inDollyZoomZone = false;
+                }
+
+                // know if the player is placed over the water object.
+                if (other.transform.tag == "Water")
+                {
+                    inWaterZone = false;
+                }
+
+            }
+
+            //We use the "onTrigger`2D" function to indicate the character that it's still touching the ground, a wall ....
+            void OnTriggerStay2D(Collider2D other)
+            {
+                if (other.CompareTag("Wall"))
+                {
+                    float y;
+                    if (playerGraphics.localScale.x > 0) y = 1.25f;
+                    else y = -1.25f;
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f, 0));
+                    Debug.DrawRay(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f, 0), Color.red);
+                    if (hit.collider.CompareTag("UpperGround"))
+                    {
+                        player.transform.DOMove(new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    }
+                    else if (hit.collider.CompareTag("Ground"))
+                    {
+                        player.transform.position += new Vector3(-0.15f, 0, 0);
+                        player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    }
+                }
+
+                if (other.transform.tag == "Door")
+                {
+                    door.playerInZone = true;
+                }
+
+                if (other.transform.tag == ("Slope"))
+                {
+                    inSlope = true;
+                }
+                //This collision warns us that we are in a moving platform and parent the character and the platform to ensure that the character follows platform movement.
+                if (other.transform.tag == "MovingPlatform")
+                {
+                    GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.None;
+                    transform.parent = other.transform;
+
+                }
+                // If we stay within a zone dolly zoom zoom I will set us until we leave it.
+                if (other.transform.tag == "DollyZoom")
+                {
+                    dolly.inDollyZoomZone = true;
+                }
+                // know if the player is placed over the water object.
+                if (other.transform.tag == "Water")
+                {
+                    inWaterZone = true;
+                }
+                if (other.transform.name == ("LeftWall") && wallCheck == true)
+                {
+
+                    touchingLeftWall = true; // We set the tounching left wall bool to true.
+                    /*if(touchingLeftWall==true)
+                    {
+                        player.transform.rotation = Quaternion.Euler(0, 0, -90);
+                        walking = true;
+                       // other.gameObject.GetComponent<Collider2D>().transform.localScale = new Vector3(0, 0.9f, 0);
+                        ///*other.gameObject.GetComponent<Collider2D>().bounds.Contains(GameObject.FindGameObjectWithTag("Wall").gameObject.transform.position.y) = new Vector2(0, 15f);
+                    }*/
+                    /*Debug.Log("1234");
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.axisValue);
+                    *///if (AxisTouchButton.instance.axisValue == -1)
+                      //{
+                      //player.transform.rotation = Quaternion.Euler(0, 0, -90);
+                      //Debug.Log("Left");
+                      //}
+                }
+                if (other.transform.name == ("RightWall") && wallCheck == true)
+                {
+
+                    touchingRightWall = true; // We set the tounching left wall bool to true.
+
+                    if (touchingRightWall == true)
+                    {
+                        Debug.Log("Right Wall Rotation");
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                        walking = true;
+
+                    }
+                    /* if (other.gameObject.name == ("RightWall"))
+                     {
+                         if(GetComponent<Collider2D>().bounds.Contains(GameObject.FindGameObjectWithTag("Wall").gameObject.transform.position))
+                         {
+
+                         }
+
+                         *//*if (other.gameObject.GetComponent<Collider2D>().bounds.Contains(other.bounds.size) && other.gameObject.GetComponent<Collider2D>().bounds.Contains(other.bounds.size))
+                         {
+                             print("On Top");
+                         }
+                         else
+                         {
+                             Debug.Log("Down");
+                         }*//*
+                     }*/
+                    //player.transform.rotation = Quaternion.Euler(0, 0, -90);
+                    /*Debug.Log("1234");
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);
+                    Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.axisValue);
+                    *///if (AxisTouchButton.instance.axisValue == -1)
+                      //{
+                      //player.transform.rotation = Quaternion.Euler(0, 0, -90);
+                      //Debug.Log("Left");
+                      //}
+                }
             }
         }
         public bool wallCheck = false;

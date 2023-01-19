@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityStandardAssets.CrossPlatformInput;
+
+
 namespace Bitboys.SuperPlaftormer2D
 {
     public class RopeControl : MonoBehaviour
     {
         public float swingForce = 10.0f;
-        public float delayBeforeSecondHang = 0.4f;
+        public float delayBeforeSecondHang = 10f;
 
         private static Transform collidedChain;
         private static List<Transform> chains;
@@ -16,19 +19,17 @@ namespace Bitboys.SuperPlaftormer2D
         private int chainIndex = 0;
         private Collider2D[] colliders;
         private PlayerController_Mobile pController;
-        //private Animator anim;
 
         private bool OnRope = false;
         private float timer = 0.0f;
         private float direction;
-        float dirX;
+        public float dirX;
         // Start is called before the first frame update
         void Start()
         {
             playerTranfrom = transform;
             colliders = GetComponentsInChildren<Collider2D>();
             pController = GetComponent<PlayerController_Mobile>();
-            //anim = GetComponent<Animator>();
         }
 
         // Update is called once per frame
@@ -43,16 +44,15 @@ namespace Bitboys.SuperPlaftormer2D
                 if(CrossPlatformInputManager.GetButtonDown("Jump"))
                 {
                     StartCoroutine(JumpOff());
-                    //pController.jumpForce = 500;
                 }
 
                 dirX = CrossPlatformInputManager.GetAxis("Horizontal");
 
-                if(dirX>dirX&& !pController.facingRight)
+                if(dirX > 0 || !pController.facingRight)
                 {
                     //pController.flip();
                 }
-                else if(dirX<0&& pController.facingRight)
+                else if(dirX < 0 || pController.facingRight)
                 {
                     //pController.flip();
                 }
@@ -66,17 +66,24 @@ namespace Bitboys.SuperPlaftormer2D
             GetComponent<Rigidbody2D>().velocity = Vector2.right;
             playerTranfrom.parent = null;
             OnRope = false;
-            pController.enabled = true;
-
-            yield return new WaitForSeconds(delayBeforeSecondHang);
-            if(pController.isGrounded)
+            if (pController.playerGraphics.localScale.x > 0)
             {
-                //playerTranfrom.position = new Vector3(playerTranfrom.rotation.x, playerTranfrom.rotation.y, 0);
-                foreach (var col in colliders)
+                // playerTranfrom.localPosition = new Vector3(playerTranfrom.localPosition.x + 5, playerTranfrom.localPosition.y, transform.localPosition.z);
+                playerTranfrom.GetComponent<Rigidbody2D>().AddForce(transform.right * 10, ForceMode2D.Impulse);
+                playerTranfrom.rotation = Quaternion.Euler(playerTranfrom.transform.rotation.x, playerTranfrom.transform.rotation.y, 0);
+            }
+            else
+            {
+                playerTranfrom.GetComponent<Rigidbody2D>().AddForce(-transform.right * 10, ForceMode2D.Impulse);
+                playerTranfrom.rotation = Quaternion.Euler(playerTranfrom.transform.rotation.x, playerTranfrom.transform.rotation.y, 0);
+            }
+            yield return new WaitForSeconds(delayBeforeSecondHang);
+            foreach (var col in colliders)
                 {
                     col.enabled = true;
                 }
-            }
+            pController.enabled = true;
+            
             
 
         }
@@ -116,11 +123,6 @@ namespace Bitboys.SuperPlaftormer2D
 
             }
 
-            return null;
-        }
-        private IEnumerator OnCollisionExit2D(Collision2D collision)
-        {
-            playerTranfrom.position = new Vector3(playerTranfrom.rotation.x, playerTranfrom.rotation.y, 0);
             return null;
         }
     }
