@@ -27,11 +27,11 @@ namespace Bitboys.SuperPlaftormer2D
         }
         public GameObject GetFirePool()
         {
-            for (int i = 0; i < firePool.Count; i++)
+            for (int i = 0; i < this.firePool.Count; i++)
             {
-                if (!firePool[i].activeInHierarchy)
+                if (!this.firePool[i].activeInHierarchy)
                 {
-                    return firePool[i];
+                    return this.firePool[i];
                 }
             }
 

@@ -10,6 +10,7 @@ namespace Bitboys.SuperPlaftormer2D
         public Transform bulletPosition;
         public bool isMoveRight;
         public bool isAnimationChange;
+        public FirePooling enemyFire;
         public Scene scene;
         private void Awake()
         {
@@ -30,6 +31,13 @@ namespace Bitboys.SuperPlaftormer2D
             StartCoroutine(FireRate());
 
         }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                enemyFire = this.GetComponentInParent<FirePooling>();
+            }
+        }
         private void OnTriggerStay2D(Collider2D collision)
         {
 
@@ -37,31 +45,32 @@ namespace Bitboys.SuperPlaftormer2D
             {
 
                 isAnimationChange = true;
-            }
-            if (scene.name == "Level 1_Mobile")
-            {
                 IsEnemyFire();
             }
-            if (scene.name == "Level 2_Mobile")
-            {
+            //if (scene.name == "Level 1_Mobile")
+            //{
+            //    IsEnemyFire();
+            //}
+            //if (scene.name == "Level 2_Mobile")
+            //{
 
-                IsEnemyFire();
+            //    IsEnemyFire();
 
-            }
-            if (scene.name == "Level 3_Mobile")
-            {
-                IsEnemyFire();
-            }
-            if (scene.name == "Level 4_Mobile")
-            {
-                IsEnemyFire();
+            //}
+            //if (scene.name == "Level 3_Mobile")
+            //{
+            //    IsEnemyFire();
+            //}
+            //if (scene.name == "Level 4_Mobile")
+            //{
+            //    IsEnemyFire();
 
-            }
-            if (scene.name == "Level 5_Mobile")
-            {
-                IsEnemyFire();
+            //}
+            //if (scene.name == "Level 5_Mobile")
+            //{
+            //    IsEnemyFire();
 
-            }
+            //}
 
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -70,17 +79,22 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 isAnimationChange = false;
                 FirePooling.instance.RemoveFirePool();
+
             }
         }
         public IEnumerator FireRate()
         {
             //isEnemyFire = true;
-            GameObject bullet = FirePooling.instance.GetFirePool();
+            GameObject bullet = enemyFire.GetFirePool();
+            //GameObject bullet = FirePooling.instance.GetFirePool();
             if (bullet != null /*&& EnemyHealthManager_Mobile.isFire == true*/)
             {
                // yield return new WaitForSeconds(0.9f);
                 //EnemyJump();
                 yield return new WaitForSeconds(0.7f);
+                print("bullet.transform.position" + bullet.name);
+                print("bulletPosition" + bulletPosition.name);
+
                 bullet.transform.position = bulletPosition.position;
                 //FirePooling.instance.RemoveFirePool();
                 /*if (isMoveRight == true)
