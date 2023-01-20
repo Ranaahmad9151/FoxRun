@@ -181,6 +181,7 @@
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Controls\ReorderableList\ReorderableListDebug.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\WatermelonCatDamage.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Layout\FancyScrollViewCell.cs" />
+    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\RopeControl.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\MenuCanvasScript_Mobile\MenuCanvasScript_Moblie.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Layout\ScrollPositionController.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Examples\FancyScrollView\01_Basic\Example01CellDto.cs" />
@@ -381,7 +382,6 @@
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\GorillaThrowRocks.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Door_Mobile.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Fish_Mobile.cs" />
-    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\RopeControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Help Me!\unity-ui-extensions\Shaders\UIAdditive.shader" />
