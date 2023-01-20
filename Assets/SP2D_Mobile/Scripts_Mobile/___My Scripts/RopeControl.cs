@@ -35,24 +35,24 @@ namespace Bitboys.SuperPlaftormer2D
         // Update is called once per frame
         void Update()
         {
-            if(OnRope)
+            if (OnRope)
             {
                 playerTranfrom.position = collidedChain.position;
                 playerTranfrom.localRotation = Quaternion.AngleAxis(direction * 0, Vector3.forward);
 
 
-                if(CrossPlatformInputManager.GetButtonDown("Jump"))
+                if (CrossPlatformInputManager.GetButtonDown("Jump"))
                 {
                     StartCoroutine(JumpOff());
                 }
 
                 dirX = CrossPlatformInputManager.GetAxis("Horizontal");
 
-                if(dirX > 0 || !pController.facingRight)
+                if (dirX > 0 || !pController.facingRight)
                 {
                     //pController.flip();
                 }
-                else if(dirX < 0 || pController.facingRight)
+                else if (dirX < 0 || pController.facingRight)
                 {
                     //pController.flip();
                 }
@@ -79,26 +79,26 @@ namespace Bitboys.SuperPlaftormer2D
             }
             yield return new WaitForSeconds(delayBeforeSecondHang);
             foreach (var col in colliders)
-                {
-                    col.enabled = true;
-                }
+            {
+                col.enabled = true;
+            }
             pController.enabled = true;
-            
-            
+
+
 
         }
 
         IEnumerator OnCollisionEnter2D(Collision2D collision)
         {
-            if(collision.gameObject.tag=="Rope2D")
+            if (collision.gameObject.tag == "Rope2D")
             {
                 var joint = collision.gameObject.GetComponent<HingeJoint2D>();
 
-                if(joint&& joint.enabled)
+                if (joint && joint.enabled)
                 {
                     pController.enabled = false;
 
-                    foreach(var col in colliders)
+                    foreach (var col in colliders)
                     {
                         col.enabled = false;
                     }
@@ -106,7 +106,7 @@ namespace Bitboys.SuperPlaftormer2D
                     var chainsParent = collision.transform.parent;
                     chains = new List<Transform>();
 
-                    foreach(Transform child in chainsParent)
+                    foreach (Transform child in chainsParent)
                     {
                         chains.Add(child);
                     }
