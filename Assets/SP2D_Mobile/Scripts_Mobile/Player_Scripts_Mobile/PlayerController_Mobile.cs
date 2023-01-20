@@ -488,7 +488,7 @@ namespace Bitboys.SuperPlaftormer2D
                     }
                 }*/
 
-                    if (!inWaterZone)
+                if (!inWaterZone)
                 {
                     JumpParticles.Emit(20);// Here we activate the jump particles.
                     if (controllerActive == true && Input.GetKeyDown(KeyCode.Space) || controllerActive == true && CrossPlatformInputManager.GetButtonDown("Jump"))
@@ -757,9 +757,19 @@ namespace Bitboys.SuperPlaftormer2D
         //public bool isJump;
         public void Jump()
         {
-            //isJump = true;
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight); // We determine the new position of the player based on the Rigidbody's x velocity and the jump amount.
-            
+            isJump = true;
+            if (isJump)
+            {
+                if (isJump)
+                {
+                    foreach (GameObject wall in wallTags)
+                    {
+                        wall.SetActive(false);
+                        Debug.Log("Collider Diseable");
+                    }
+                }
+            }
         }
         public void doubleJump()
         {
@@ -798,8 +808,30 @@ namespace Bitboys.SuperPlaftormer2D
             controllerActive = true;
             this.transform.localScale = new Vector3(1, 1, 1);
         }
-
-
+        public bool isJump;
+        public bool upperGrounded;
+        public bool grounded;
+        IEnumerator WallsCollider()
+        {
+            if (upperGrounded)
+            {
+                yield return new WaitForSeconds(0.3f);
+                foreach (GameObject wall in wallTags)
+                {
+                    wall.SetActive(true);
+                    Debug.Log("Upper Collider Enable");
+                }
+            }
+            else if (grounded)
+            {
+                yield return new WaitForSeconds(0.05f);
+                foreach (GameObject wall in wallTags)
+                {
+                    wall.SetActive(true);
+                    Debug.Log("Ground Collider Enable");
+                }
+            }
+        }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -808,7 +840,17 @@ namespace Bitboys.SuperPlaftormer2D
 
         void OnCollisionEnter2D(Collision2D coll)
         {
-            
+            if (coll.transform.tag == ("Ground"))
+            {
+                grounded = true;
+                StartCoroutine(WallsCollider());
+            }
+            if (coll.transform.tag == ("UpperGround") && !upperGrounded)
+            {
+                upperGrounded = true;
+                StartCoroutine(WallsCollider());
+            }
+
             //Grounded collision, particles and sound effects.
             // If the player touches the ground and is not walking and is not goin up but is ending fall.
             if (coll.transform.tag == ("Ground") && !walking && !goUp && falling)
@@ -875,6 +917,16 @@ namespace Bitboys.SuperPlaftormer2D
         // This collision use is to ensure that when the character is on a platform we stay on it.
         void OnCollisionExit2D(Collision2D other)
         {
+            //NOT TOUCHING WALL ... EXIT!!
+            if (other.transform.tag == ("UpperGround"))
+            {
+                foreach (GameObject wall in wallTags)
+                {
+                    wall.SetActive(false);
+                    Debug.Log("Upper Collider Enable");
+                }
+            }
+
             if (other.transform.tag == ("Wall"))
             {
                 touchingLeftWall = false;
@@ -887,7 +939,6 @@ namespace Bitboys.SuperPlaftormer2D
 
                 transform.parent = null; // When the player leaves the platform this function is automatically disabled.
             }
-            //NOT TOUCHING WALL ... EXIT!!
 
         }
 
@@ -1172,13 +1223,13 @@ namespace Bitboys.SuperPlaftormer2D
             {
 
                 touchingLeftWall = true; // We set the tounching left wall bool to true.
-                /*if(touchingLeftWall==true)
+                Debug.Log("Left Rotation");
+                if (touchingLeftWall == true)
                 {
+                    Debug.Log("Left Wall Rotation");
                     player.transform.rotation = Quaternion.Euler(0, 0, -90);
                     walking = true;
-                   // other.gameObject.GetComponent<Collider2D>().transform.localScale = new Vector3(0, 0.9f, 0);
-                    ///*other.gameObject.GetComponent<Collider2D>().bounds.Contains(GameObject.FindGameObjectWithTag("Wall").gameObject.transform.position.y) = new Vector2(0, 15f);
-                }*/
+                }
                 /*Debug.Log("1234");
                 Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
                 Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);

@@ -47,30 +47,6 @@ namespace Bitboys.SuperPlaftormer2D
                 isAnimationChange = true;
                 IsEnemyFire();
             }
-            //if (scene.name == "Level 1_Mobile")
-            //{
-            //    IsEnemyFire();
-            //}
-            //if (scene.name == "Level 2_Mobile")
-            //{
-
-            //    IsEnemyFire();
-
-            //}
-            //if (scene.name == "Level 3_Mobile")
-            //{
-            //    IsEnemyFire();
-            //}
-            //if (scene.name == "Level 4_Mobile")
-            //{
-            //    IsEnemyFire();
-
-            //}
-            //if (scene.name == "Level 5_Mobile")
-            //{
-            //    IsEnemyFire();
-
-            //}
 
         }
         private void OnTriggerExit2D(Collider2D collision)
@@ -84,29 +60,11 @@ namespace Bitboys.SuperPlaftormer2D
         }
         public IEnumerator FireRate()
         {
-            //isEnemyFire = true;
             GameObject bullet = enemyFire.GetFirePool();
-            //GameObject bullet = FirePooling.instance.GetFirePool();
-            if (bullet != null /*&& EnemyHealthManager_Mobile.isFire == true*/)
+            if (bullet != null)
             {
-               // yield return new WaitForSeconds(0.9f);
-                //EnemyJump();
                 yield return new WaitForSeconds(0.7f);
-                print("bullet.transform.position" + bullet.name);
-                print("bulletPosition" + bulletPosition.name);
-
                 bullet.transform.position = bulletPosition.position;
-                //FirePooling.instance.RemoveFirePool();
-                /*if (isMoveRight == true)
-                {
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 10;
-                    // EnemyHealthManager.enemyAnim.SetBool("isEnemyFire", true);
-                }
-                else
-                {
-                    bullet.GetComponent<Rigidbody2D>().velocity = Vector2.left * 10;
-                    // EnemyHealthManager.enemyAnim.SetBool("isEnemyFire", true);
-                }*/
 
                 bullet.SetActive(true);
 
