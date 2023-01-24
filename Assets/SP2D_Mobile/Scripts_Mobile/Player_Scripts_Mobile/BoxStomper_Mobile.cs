@@ -8,8 +8,12 @@ namespace Bitboys.SuperPlaftormer2D {
 	[RequireComponent(typeof(BoxCollider2D))]
 
 	public class BoxStomper_Mobile : MonoBehaviour {
-		
-	[Range(0, 5)] // Slide Bar.
+
+        private void Start()
+        {
+            
+        }
+        [Range(0, 5)] // Slide Bar.
 	public int forceToGive = 1; // the force applied to the crate object.
 	[Range(0.0f, 25.0f)] // Slide Bar.
 	public float bounceOnBox = 18.00f;// the amount of bounce that we get when the character jump on the crate.

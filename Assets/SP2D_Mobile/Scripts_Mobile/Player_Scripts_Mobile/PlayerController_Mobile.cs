@@ -800,7 +800,7 @@ namespace Bitboys.SuperPlaftormer2D
         {
             if (upperGrounded)
             {
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.001f);
                 foreach (GameObject wall in wallTags)
                 {
                     wall.SetActive(true);
@@ -878,6 +878,12 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 sandParticles.Emit(5);// Here we activate the jump particles.
             }
+            if (collision.transform.tag == ("Ground"))
+            {
+                grounded = true;
+                StartCoroutine(WallsCollider());
+            }
+
         }
 
         // This collision use is to ensure that when the character is on a platform we stay on it.
@@ -1019,14 +1025,14 @@ namespace Bitboys.SuperPlaftormer2D
             }
             if(other.CompareTag("UpperGround"))
             {
-                if (playerGraphics.localScale.x < 0)
+                /*if (playerGraphics.localScale.x < 0)
                 {
                     player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x - 0.4f, player.transform.position.y, 0), 0.2f);
                 }
                 else
                 {
                     player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x + 0.4f, player.transform.position.y, 0), 0.3f);
-                }  
+                } */ 
             }
             if (other.transform.tag == "MovingPlatform")
             {
@@ -1048,8 +1054,8 @@ namespace Bitboys.SuperPlaftormer2D
         //We use the "onTrigger`2D" function to indicate the character that it's still touching the ground, a wall ....
         void OnTriggerStay2D(Collider2D other)
         {
-            if (other.CompareTag("Wall"))
-            {
+            /*if (other.CompareTag("Wall"))
+            {*/
                 if(other.transform.name=="RightWall")
                 {
                     float y;
@@ -1079,6 +1085,7 @@ namespace Bitboys.SuperPlaftormer2D
 
                     RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(-1f, y, 0), new Vector3(1, 0f, 0));
                     Debug.DrawRay(transform.position + new Vector3(-1f, y, 0), new Vector3(1, 0f, 0), Color.red);
+                Debug.Log(hit.collider.name);
                     if (hit.collider.CompareTag("UpperGround"))
                     {
                         player.transform.DOMove(new Vector3(player.transform.position.x - 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
@@ -1094,7 +1101,7 @@ namespace Bitboys.SuperPlaftormer2D
 
                     }
                 }
-            }
+            
             if (other.transform.tag == "Door")
             {
                 door.playerInZone = true;
