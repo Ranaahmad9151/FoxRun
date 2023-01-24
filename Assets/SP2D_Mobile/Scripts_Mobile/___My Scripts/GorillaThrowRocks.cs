@@ -7,7 +7,8 @@ namespace Bitboys.SuperPlaftormer2D
 
     public class GorillaThrowRocks : MonoBehaviour
     {
-        public static GorillaThrowRocks instance;
+        public static GorillaThrowRocks instance; 
+        public GameObject demage;
         public Transform bulletPosition;
         public bool isMoveRight;
         public bool isAnimationChange;
@@ -22,6 +23,7 @@ namespace Bitboys.SuperPlaftormer2D
         void Start()
         {
             gamePlaySound.Play();
+            demage.SetActive(true);
             scene = SceneManager.GetActiveScene();
         }
 
@@ -41,6 +43,7 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 bettleZoneSound.Play();
                 gamePlaySound.Pause();
+                demage.SetActive(false);
                 bossFire = this.GetComponentInParent<FirePooling>();
             }
         }
@@ -62,6 +65,7 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 bettleZoneSound.Pause();
                 gamePlaySound.Play();
+                demage.SetActive(true);
                 isAnimationChange = false;
                 FirePooling.instance.RemoveFirePool();
             }

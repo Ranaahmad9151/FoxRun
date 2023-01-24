@@ -8,11 +8,10 @@ public class MetalBricks : MonoBehaviour
     GameObject mettalBricks;
     public GameObject[] spwanPoints;
     public bool isBricks=true;
-    public GameObject demage;
     // Start is called before the first frame update
     void Start()
     {
-        demage.SetActive(true);
+        //demage.SetActive(true);
         isBricks = true;
         mettalBricks.GetComponent<Rigidbody2D>();
     }
@@ -22,6 +21,13 @@ public class MetalBricks : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        /*if (collision.gameObject.name == "Player")
+        {
+            demage.SetActive(false);
+        }*/
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.name== "Player"&& isBricks)
@@ -29,10 +35,7 @@ public class MetalBricks : MonoBehaviour
             isBricks = false;
             StartCoroutine(SpwanObjects());
         }
-        if(collision.gameObject.name== "Player")
-        {
-            demage.SetActive(false);
-        }
+        
             
     }
     
@@ -44,8 +47,8 @@ public class MetalBricks : MonoBehaviour
             yield return new WaitForSeconds(3);
             isBricks = true;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         demage.SetActive(true);
-    }
+    }*/
 }

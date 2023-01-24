@@ -1054,9 +1054,9 @@ namespace Bitboys.SuperPlaftormer2D
         //We use the "onTrigger`2D" function to indicate the character that it's still touching the ground, a wall ....
         void OnTriggerStay2D(Collider2D other)
         {
-            /*if (other.CompareTag("Wall"))
-            {*/
-                if(other.transform.name=="RightWall")
+            if (other.CompareTag("Wall"))
+            {
+                if (other.transform.name == "RightWall")
                 {
                     float y;
                     if (playerGraphics.localScale.x > 0) y = 1.25f;
@@ -1077,7 +1077,7 @@ namespace Bitboys.SuperPlaftormer2D
                         walking = true;
                     }
                 }
-                else if(other.transform.name==("LeftWall"))
+                else if (other.transform.name == ("LeftWall"))
                 {
                     float y;
                     if (playerGraphics.localScale.x < 0) y = 0.9f;
@@ -1085,7 +1085,7 @@ namespace Bitboys.SuperPlaftormer2D
 
                     RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(-1f, y, 0), new Vector3(1, 0f, 0));
                     Debug.DrawRay(transform.position + new Vector3(-1f, y, 0), new Vector3(1, 0f, 0), Color.red);
-                Debug.Log(hit.collider.name);
+                    Debug.Log(hit.collider.name);
                     if (hit.collider.CompareTag("UpperGround"))
                     {
                         player.transform.DOMove(new Vector3(player.transform.position.x - 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
@@ -1101,7 +1101,7 @@ namespace Bitboys.SuperPlaftormer2D
 
                     }
                 }
-            
+            }
             if (other.transform.tag == "Door")
             {
                 door.playerInZone = true;
