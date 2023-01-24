@@ -340,32 +340,18 @@ namespace Bitboys.SuperPlaftormer2D
             // if the player it's touching the Left  wall we activate the sticky animation and we ensure that the local scale is set to the right.
             if (touchingLeftWall == true)
             {
-
-                /*GetComponent<Rigidbody2D>().gravityScale = 0f;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
-                //float speedModifier = new Vector2(GetComponent<Rigidbody2D>().velocity.y > 0 ? 0.35 : 1);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y * (2 * 1));
-                Debug.Log("Y" + GetComponent<Rigidbody2D>().velocity.y);
-
-
-                myAnim.SetBool("VerticalAxis", true);*/
-                //myAnim.SetTrigger("Sticky");
-                //playerGraphics.localScale = new Vector3(-1, 1, 1);
-
-                // if the player it's touching the right wall we activate the sticky animation and we ensure that the local scale is set to the left.
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -moveVelocity);
             }
+            // if the player it's touching the right wall we activate the sticky animation and we ensure that the local scale is set to the left.
             if (touchingRightWall == true)
             {
-
-
-                //myAnim.SetTrigger("Sticky");
-                //playerGraphics.localScale = new Vector3(1, 1, 1);
-
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVelocity);
             }
             // if we touch the left or right wall the gravity scale changes to avoid the player fall down so quickly. Also we apply some horizontal force to get the sticky feeling.
             if (touchingRightWall || touchingLeftWall)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVelocity);
+                
+                
 
                 /*GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -0.1f);
                 Vector3 newPos = transform.position + new Vector3(0, 1, 0) * Time.deltaTime * 5;
@@ -766,7 +752,6 @@ namespace Bitboys.SuperPlaftormer2D
                     foreach (GameObject wall in wallTags)
                     {
                         wall.SetActive(false);
-                        Debug.Log("Collider Diseable");
                     }
                 }
             }
@@ -819,7 +804,6 @@ namespace Bitboys.SuperPlaftormer2D
                 foreach (GameObject wall in wallTags)
                 {
                     wall.SetActive(true);
-                    Debug.Log("Upper Collider Enable");
                 }
             }
             else if (grounded)
@@ -828,7 +812,6 @@ namespace Bitboys.SuperPlaftormer2D
                 foreach (GameObject wall in wallTags)
                 {
                     wall.SetActive(true);
-                    Debug.Log("Ground Collider Enable");
                 }
             }
         }
@@ -881,21 +864,6 @@ namespace Bitboys.SuperPlaftormer2D
                 GameObject go = this.transform.Find("LandedParticles").gameObject;
                 go.SetActive(false);// set particles off.
             }
-            //Wall Particles and sound effects.
-            //if (coll.transform.tag == ("Wall"))
-            //{
-            //    GameObject go = playerGraphics.transform.Find("WalledParticles").gameObject;
-            //    go.SetActive(true);// We activate the "puff" grounded particles.
-            //    walledParticles.Emit(10);
-            //    GetComponent<AudioSource>().PlayOneShot(walledSfx, walledSfxVolume);
-            //}
-            //else
-            //{
-            //    landedParticles.Emit(0);
-            //    GameObject go = playerGraphics.transform.Find("WalledParticles").gameObject;
-            //    go.SetActive(false);// set particles off.
-            //}
-
             //HIT ENEMY PARTICLES//
             //This function sets active the "hit" particle system when the character collides with an enemy.
             if (coll.transform.tag == ("Enemy") || coll.transform.tag == ("Arrow"))
@@ -909,8 +877,6 @@ namespace Bitboys.SuperPlaftormer2D
             if(collision.gameObject.CompareTag("Mud"))
             {
                 sandParticles.Emit(5);// Here we activate the jump particles.
-                //Instantiate(sandParticles, transform.position, transform.rotation);
-                Debug.Log("MUD");
             }
         }
 
@@ -923,7 +889,6 @@ namespace Bitboys.SuperPlaftormer2D
                 foreach (GameObject wall in wallTags)
                 {
                     wall.SetActive(false);
-                    Debug.Log("Upper Collider Enable");
                 }
             }
 
@@ -931,7 +896,6 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 touchingLeftWall = false;
                 touchingRightWall = false;
-                //player.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (other.transform.tag == "MovingPlatform")
             {
@@ -1022,32 +986,6 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 door.playerInZone = false;
             }
-            #region deadarea
-            // TOUCHING WALLS//
-            /*Debug.Log("123" + other.transform.name);
-            if (other.transform.name == ("LeftWall"))
-            {
-              
-                Debug.Log("1234");
-                touchingLeftWall = true; // We set the tounching left wall bool to true.
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234"+ touchingLeftWall);
-                if (AxisTouchButton.instance.isPressed == true *//*&& AxisTouchButton.instance.axisValue==-1*//*)
-                {
-                    Debug.Log("Left 1234");
-                    player.transform.rotation = Quaternion.EulerAngles(0, 0, -90);
-                }
-            }
-            else if (other.transform.name == ("RightWall"))
-            {
-                touchingRightWall = true;// We set the tounching right wall bool to true.
-                if (AxisTouchButton.instance.isPressed == true)
-                {
-                    player.transform.rotation = Quaternion.EulerAngles(0, 0, 90);
-                    Debug.Log("Right");
-                }
-            }*/
-            #endregion
             if (other.transform.tag == ("Slope"))
             {
                 inSlope = false;
@@ -1067,51 +1005,28 @@ namespace Bitboys.SuperPlaftormer2D
 
 
             }
-           /* if (other.transform.tag == ("UpperGround") && !walking)
-            {
-                ColliderTransformatiion.isUpperGround = true;
-                GameObject go = this.transform.Find("GroundedParticles").gameObject;
-                go.SetActive(false);
-                groundedparticles.Emit(0);
-               *//* ColliderTransformatiion.wall.enabled = true;
-                ColliderTransformatiion.ground.enabled = false;*//*
-            }*/
             if (other.transform.name == ("LeftWall"))
             {
                 touchingLeftWall = false;
 
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                /*if(wallCheck == true)
-                {
-                    player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                }*/
-
             }
             if (other.transform.name == ("RightWall"))
             {
                 touchingRightWall = false;
 
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("Right Wall Rotation Reset");
-                /*if (wallCheck == true)
-                {
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90);
-                }*/
             }
             if(other.CompareTag("UpperGround"))
             {
                 if (playerGraphics.localScale.x < 0)
                 {
-                    print("UpperGround : -1");
-                    //               player.transform.position += new Vector3(-0.4f, 0, 0);
                     player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x - 0.4f, player.transform.position.y, 0), 0.2f);
-
                 }
                 else
                 {
                     player.GetComponent<Rigidbody2D>().DOMove(new Vector3(player.transform.position.x + 0.4f, player.transform.position.y, 0), 0.3f);
-                }  // player.transform.position += new Vector3(0.25f,0, 0);
-                // player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }  
             }
             if (other.transform.tag == "MovingPlatform")
             {
@@ -1130,69 +1045,56 @@ namespace Bitboys.SuperPlaftormer2D
             }
 
         }
-        
         //We use the "onTrigger`2D" function to indicate the character that it's still touching the ground, a wall ....
-        //Vector3 lastPos = new Vector3(0,0,0);
         void OnTriggerStay2D(Collider2D other)
         {
             if (other.CompareTag("Wall"))
             {
-                float y;
-                if (playerGraphics.localScale.x > 0) y = 1.25f;
-                else y = -1.25f;
-
-                RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f, 0));
-                Debug.DrawRay(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f,0), Color.red);
-                Debug.Log(hit.collider.name);
-                if (hit.collider.CompareTag("UpperGround"))
+                if(other.transform.name=="RightWall")
                 {
-                    //Debug.Break();
-                    print("Hit UpperGround");
-                    player.transform.DOMove(new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
-                    player.transform.rotation = Quaternion.Euler(0, 0, 90);
-                    //iTween.MoveAdd(player.gameObject, new Vector3(1, 2.5f, 0), 0f);
-                    //player.transform.position += new Vector3(1, 2.5f, 0);
-                    walking = true;
+                    float y;
+                    if (playerGraphics.localScale.x > 0) y = 1.25f;
+                    else y = -1.25f;
 
-                    //this.gameObject.transform.position = hit.transform.position;
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f, 0));
+                    Debug.DrawRay(transform.position + new Vector3(0, y, 0), new Vector3(1, 0f, 0), Color.red);
+                    if (hit.collider.CompareTag("UpperGround"))
+                    {
+                        player.transform.DOMove(new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                        walking = true;
+                    }
+                    else if (hit.collider.CompareTag("Ground"))
+                    {
+                        player.transform.position += new Vector3(-0.15f, 0, 0);
+                        player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                        walking = true;
+                    }
                 }
-                else if (hit.collider.CompareTag("Ground"))
+                else if(other.transform.name==("LeftWall"))
                 {
-                    //Debug.Break();
-                    print("Hit Ground");
-                    player.transform.position += new Vector3(-0.15f, 0, 0);
-                    player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    walking = true;
+                    float y;
+                    if (playerGraphics.localScale.x < 0) y = 0.9f;
+                    else y = -1.25f;
 
-                    //this.gameObject.transform.position = hit.transform.position;
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(-1f, y, 0), new Vector3(1, 0f, 0));
+                    Debug.DrawRay(transform.position + new Vector3(-1f, y, 0), new Vector3(1, 0f, 0), Color.red);
+                    if (hit.collider.CompareTag("UpperGround"))
+                    {
+                        player.transform.DOMove(new Vector3(player.transform.position.x - 1.5f, player.transform.position.y + 2.5f, 0), 0.2f);
+                        player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                        walking = true;
+
+                    }
+                    else if (hit.collider.CompareTag("Ground"))
+                    {
+                        player.transform.position += new Vector3(-0.15f, 0, 0);
+                        player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                        walking = true;
+
+                    }
                 }
-                //if (transform.position == lastPos)
-                //{
-                //    //Exit
-                //    print("Exit");
-                //    player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                //}
-                //lastPos = transform.position;
             }
-
-            /*if(other.CompareTag("Ground"))
-            {
-                foreach (GameObject wall in wallTags)
-                {
-                    wall.SetActive(true);
-                    Debug.Log("Collider Enable");
-                }
-            }
-            if(other.CompareTag("UpperGround"))
-            {
-                foreach (GameObject wall in wallTags)
-                {
-                    wall.SetActive(true);
-                    Debug.Log("Collider Enable");
-                }
-            }*/
-
-
             if (other.transform.tag == "Door")
             {
                 door.playerInZone = true;
@@ -1223,61 +1125,21 @@ namespace Bitboys.SuperPlaftormer2D
             {
 
                 touchingLeftWall = true; // We set the tounching left wall bool to true.
-                Debug.Log("Left Rotation");
                 if (touchingLeftWall == true)
                 {
-                    Debug.Log("Left Wall Rotation");
                     player.transform.rotation = Quaternion.Euler(0, 0, -90);
                     walking = true;
                 }
-                /*Debug.Log("1234");
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.axisValue);
-                *///if (AxisTouchButton.instance.axisValue == -1)
-                  //{
-                  //player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                  //Debug.Log("Left");
-                  //}
             } 
             if (other.transform.name == ("RightWall") && wallCheck == true)
             {
-
                 touchingRightWall = true; // We set the tounching left wall bool to true.
-
                 if (touchingRightWall == true)
                 {
-                    Debug.Log("Right Wall Rotation");
                     player.transform.rotation = Quaternion.Euler(0, 0, 90);
                     walking = true;
 
                 }
-                /* if (other.gameObject.name == ("RightWall"))
-                 {
-                     if(GetComponent<Collider2D>().bounds.Contains(GameObject.FindGameObjectWithTag("Wall").gameObject.transform.position))
-                     {
-
-                     }
-
-                     *//*if (other.gameObject.GetComponent<Collider2D>().bounds.Contains(other.bounds.size) && other.gameObject.GetComponent<Collider2D>().bounds.Contains(other.bounds.size))
-                     {
-                         print("On Top");
-                     }
-                     else
-                     {
-                         Debug.Log("Down");
-                     }*//*
-                 }*/
-                //player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                /*Debug.Log("1234");
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.isPressed);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + touchingLeftWall);
-                Debug.Log("AxisTouchButton.instance.isPressed: 1234" + AxisTouchButton.instance.axisValue);
-                *///if (AxisTouchButton.instance.axisValue == -1)
-                  //{
-                  //player.transform.rotation = Quaternion.Euler(0, 0, -90);
-                  //Debug.Log("Left");
-                  //}
             }
         }
         public bool wallCheck = false;

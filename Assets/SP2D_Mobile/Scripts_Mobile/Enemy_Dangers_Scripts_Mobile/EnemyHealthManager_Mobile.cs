@@ -23,7 +23,7 @@ namespace Bitboys.SuperPlaftormer2D {
 		[Range(0.0f, 5.0f)] 
 		private float _lengthOfTimeToFlash = 0.1f; // The lenght of the flash 
 		private static Shake_Mobile shakeController;
-		public GameObject catEnemy;
+		public GameObject detection;
 
 		public Scene scene;
 		private void Start()
@@ -31,33 +31,20 @@ namespace Bitboys.SuperPlaftormer2D {
 			scene = SceneManager.GetActiveScene();
 			if (this.gameObject.name=="Boss")
             {
-                //print(HealthBar.instance.name);
                 HealthBar.instance.slider.maxValue = enemyHealth;
                 HealthBar.instance.slider.value = enemyHealth;
             }
-			
-			//isFire = true;
 			enemyAnim =GetComponent<Animator>();
 		}
 		// Update is called once per frame
 		void Update()
 		{
 		}
-/*		public void AnimationEvent()
-        {
-			//EnemiesTarget.isEnemyFire = true;
-			Debug.Log("Aniamtion");
-        }*/
 		void FixedUpdate () {
 			
 			if (enemyHealth <= 0) {
-               /* if (this.gameObject.name == ("Boss"))
-                {
-					HealthBar.instance.slider.maxValue = enemyHealth;
-					HealthBar.instance.slider.value = enemyHealth;
-				}*/
                 enemyAnim.SetBool("isDead",true);
-				catEnemy.transform.localScale = new Vector3(1, 0.3f, 1);
+				//catEnemy.transform.localScale = new Vector3(1, 0.3f, 1);
 				StartCoroutine(DestroyObject());
 				ScoreManager_Mobile.AddPoints(pointsOnDeath); // we add some points to the score counter.
 				
@@ -68,7 +55,6 @@ namespace Bitboys.SuperPlaftormer2D {
         public void giveDamage(int damageToGive)
 	{
 			enemyHealth -= damageToGive; // substract the enemy energy.
-										 //shakeController.ShakeCamera(0.3f, 0.3f); // This will shake the camera when the player takes damage.
 			if (this.gameObject.name == ("Boss"))
 			{
 				HealthBar.instance.slider.value = enemyHealth;
@@ -82,7 +68,6 @@ namespace Bitboys.SuperPlaftormer2D {
 					demage.SetActive(true);
 
 				}
-               
 			}
 		}
 
@@ -114,10 +99,9 @@ namespace Bitboys.SuperPlaftormer2D {
 			if(this.gameObject.name==("Boss"))
             {
 				HealthBar.instance.slider.value = enemyHealth;
-				/*
-				SoundManager.instance.bettleZone.enabled = false;
-				SoundManager.instance.gamePlay.enabled = true;*/
-				//isFire = false;
+				detection.SetActive(false);
+				FirePooling.instance.RemoveFirePool();
+
 				foreach (Collider2D col in GetComponents<Collider2D>())
 				{
 					col.enabled = false;
@@ -135,7 +119,6 @@ namespace Bitboys.SuperPlaftormer2D {
 					this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 					this.GetComponent<FlyingEnemiesGroup_Mobile>().enabled = false;
                 }
-                FirePooling.instance.RemoveFirePool();
 				yield return new WaitForSeconds(3);
 				Destroy(gameObject);// finally destroy this object.
 				Instantiate(deathEffect, transform.position, transform.rotation); // if the enemy dies we instantiate the death effect particles.
