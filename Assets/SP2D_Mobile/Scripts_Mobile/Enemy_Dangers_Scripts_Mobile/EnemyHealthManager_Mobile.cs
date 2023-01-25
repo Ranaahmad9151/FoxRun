@@ -132,7 +132,7 @@ namespace Bitboys.SuperPlaftormer2D {
 		}
 		private void OnTriggerStay2D(Collider2D collision)
 		{
-
+			
 			if (GorillaThrowRocks.instance.isAnimationChange)
 			{
 				enemyAnim.SetBool("isEnemyFire", true);
