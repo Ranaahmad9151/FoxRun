@@ -876,7 +876,7 @@ namespace Bitboys.SuperPlaftormer2D
         {
             if(collision.gameObject.CompareTag("Mud"))
             {
-                sandParticles.Emit(5);// Here we activate the jump particles.
+                sandParticles.Emit(1);// Here we activate the jump particles.
             }
             if (collision.transform.tag == ("Ground"))
             {
