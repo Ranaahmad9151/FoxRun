@@ -75,11 +75,20 @@ namespace Bitboys.SuperPlaftormer2D
             GameObject bullet = bossFire.GetFirePool();
             if (bullet != null)
             {
-                yield return new WaitForSeconds(0.9f);
-                yield return new WaitForSeconds(0.07f);
+                //yield return new WaitForSeconds(0.9f);
+                yield return new WaitForSeconds(0.01f);
                 bullet.transform.position = bulletPosition.position;
-                bullet.SetActive(true);
 
+                if(!isMoveRight)
+                {
+                    bullet.GetComponent<Rigidbody2D>().AddForce(-transform.right * 3, ForceMode2D.Impulse);
+                    
+                }
+                else
+                {
+                    bullet.GetComponent<Rigidbody2D>().AddForce(transform.right * 3, ForceMode2D.Impulse);
+                }
+                bullet.SetActive(true);
             }
         }
     }

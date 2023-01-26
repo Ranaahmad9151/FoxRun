@@ -14,7 +14,7 @@ public class WaterMover : MonoBehaviour
     {
         if (mat.mainTextureOffset.y < 100000)
         {
-            mat.mainTextureOffset += new Vector2(0, 0.1f*speed);
+            mat.mainTextureOffset += new Vector2(0, -0.1f*speed);
         }
         if (mat.mainTextureOffset.y >= 100000)
         {

@@ -50,10 +50,12 @@ namespace Bitboys.SuperPlaftormer2D
 
                 if (dirX > 0 || !pController.facingRight)
                 {
+                    pController.moveVelocity = pController.moveSpeed;
                     //pController.flip();
                 }
                 else if (dirX < 0 || pController.facingRight)
                 {
+                    pController.moveVelocity = -pController.moveSpeed;
                     //pController.flip();
                 }
 

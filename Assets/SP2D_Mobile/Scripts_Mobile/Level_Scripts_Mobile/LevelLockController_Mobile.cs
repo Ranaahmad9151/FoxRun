@@ -13,7 +13,7 @@ public class LevelLockController_Mobile : MonoBehaviour {
 	void Start ()
 	{
 		ButtonPerant = GameObject.Find (PerantName);
-		LockNumber = PlayerPrefs.GetInt ("Lock");
+		/*LockNumber = PlayerPrefs.GetInt ("Lock");
 
 		if (LockNumber >= LastNumber) 
 		{
@@ -31,10 +31,15 @@ public class LevelLockController_Mobile : MonoBehaviour {
 		for (int i=LockNumber+1; i <= Locks.Length-1; i++) 
 		{
 			ButtonPerant.transform.GetChild (i).GetComponent<Button> ().interactable = false;
+		}*/
+
+
+		// My Code
+		LockNumber = 6;
+		for (int i = 0; i <= LockNumber; i++)
+		{
+			Locks[i].gameObject.SetActive(false);
 		}
-	
-
-
 
 	}
 	

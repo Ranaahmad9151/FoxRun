@@ -20,7 +20,7 @@ namespace Bitboys.SuperPlaftormer2D {
 		public int prefabLimit = 1;
 		public bool spawnTraveller = false;
 		public GameObject QuestionModule;
-
+		public AudioSource levelCompleteMusic;
 	//Vortex variables
 
 	[Range(0.0f, 500f)]
@@ -209,6 +209,8 @@ namespace Bitboys.SuperPlaftormer2D {
 
 			int LevelNumber = FindObjectOfType<LevelIndicator_Mobile> ().LevelNumber;
 			Debug.Log (LevelNumber);
+			GorillaThrowRocks.instance.gamePlaySound.Pause();
+			levelCompleteMusic.Play();
 			if (PlayerPrefs.GetInt ("Lock") < LevelNumber)
 			{
 				PlayerPrefs.SetInt ("Lock", LevelNumber);

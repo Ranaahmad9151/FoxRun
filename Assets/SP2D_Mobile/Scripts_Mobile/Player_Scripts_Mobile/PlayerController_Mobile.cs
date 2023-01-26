@@ -27,7 +27,7 @@ namespace Bitboys.SuperPlaftormer2D
         public float jumpHeight = 20; //The jump height.
         [Range(0.0f, 50.0f)]  // Move Speed Slide Bar.
         public float moveSpeed; // the Character  Horizontal movement speed.
-        private float moveVelocity; // the Character Vertical movement speed.
+        public float moveVelocity; // the Character Vertical movement speed.
         public Transform groundCheck; // The Transform component that determines if the Character it's in contact with the ground.
         [Range(0.0f, 1.0f)]           // Ground Check radius Slide Bar.
         public float groundCheckRadius; // This determines the space between the character Collider and the ground.
