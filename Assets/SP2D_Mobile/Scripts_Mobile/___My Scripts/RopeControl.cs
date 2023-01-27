@@ -45,20 +45,49 @@ namespace Bitboys.SuperPlaftormer2D
                 {
                     StartCoroutine(JumpOff());
                 }
-
-                dirX = CrossPlatformInputManager.GetAxis("Horizontal");
-
-                if (dirX > 0 || !pController.facingRight)
+/*
+                if (pController.playerGraphics.transform.localScale.x == 1)
                 {
-                    pController.moveVelocity = pController.moveSpeed;
+                    dirX = 1;
+                }
+                else
+                {
+                    dirX = -1;
+                }*/
+                dirX = CrossPlatformInputManager.GetAxis("Horizontal");
+                dirX= CrossPlatformInputManager.GetAxis("Horizontal_Mobile");
+                /*if (dirX > dirX || !pController.facingRight)
+                {
+                    //pController.moveVelocity = pController.moveSpeed;
+                    pController.playerGraphics.transform.localScale = new Vector3(1f, 1f, 1f);
+                    
                     //pController.flip();
                 }
                 else if (dirX < 0 || pController.facingRight)
                 {
-                    pController.moveVelocity = -pController.moveSpeed;
+                    //pController.moveVelocity = -pController.moveSpeed;
+                    pController.playerGraphics.transform.localScale = new Vector3(-1f, 1f, 1f);
+                    //pController.flip();
+                }*/
+                /*if (pController.controllerActive == true && CrossPlatformInputManager.GetAxis("Horizontal_Mobile") > 0.1f && !pController.touchingLeftWall && !pController.touchingRightWall)
+                {
+                    pController.playerGraphics.localScale = new Vector3(1, 1, 1); // Right flip.
+
+                }*/
+                if (dirX > dirX || pController.controllerActive == true && CrossPlatformInputManager.GetAxis("Horizontal_Mobile") > 0.1f && !pController.touchingLeftWall && !pController.touchingRightWall)
+                {
+                    //pController.moveVelocity = pController.moveSpeed;
+                    pController.playerGraphics.transform.localScale = new Vector3(1f, 1f, 1f);
+
                     //pController.flip();
                 }
-
+                else if (dirX < 0 || pController.controllerActive == true && CrossPlatformInputManager.GetAxis("Horizontal_Mobile") > 0.1f && !pController.touchingLeftWall && !pController.touchingRightWall)
+                {
+                    //pController.moveVelocity = -pController.moveSpeed;
+                    pController.playerGraphics.transform.localScale = new Vector3(-1f, 1f, 1f);
+                    //pController.flip();
+                }
+                //dirX = 0;
                 collidedChain.GetComponent<Rigidbody2D>().AddForce(Vector2.right * dirX * swingForce);
             }
         }
