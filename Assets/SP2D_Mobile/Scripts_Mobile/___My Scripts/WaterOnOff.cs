@@ -20,7 +20,7 @@ public class WaterOnOff : MonoBehaviour
         {
             for (int i = 0; i < water.Length; i++)
             {
-                int randomValue = Random.Range(0, 5);
+                int randomValue = Random.Range(0, 3);
                 if (randomValue == 0)
                 {
                     water[i].SetActive(false);
