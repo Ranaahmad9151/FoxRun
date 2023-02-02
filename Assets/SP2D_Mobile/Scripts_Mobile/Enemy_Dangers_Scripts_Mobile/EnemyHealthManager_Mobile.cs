@@ -24,7 +24,7 @@ namespace Bitboys.SuperPlaftormer2D {
 		private float _lengthOfTimeToFlash = 0.1f; // The lenght of the flash 
 		private static Shake_Mobile shakeController;
 		public GameObject detection;
-
+		public GameObject catEnemy;
 		public Scene scene;
 		private void Start()
         {
@@ -44,7 +44,7 @@ namespace Bitboys.SuperPlaftormer2D {
 			
 			if (enemyHealth <= 0) {
                 enemyAnim.SetBool("isDead",true);
-				//catEnemy.transform.localScale = new Vector3(1, 0.3f, 1);
+				catEnemy.transform.localScale = new Vector3(1, 0.35f, 1);
 				StartCoroutine(DestroyObject());
 				ScoreManager_Mobile.AddPoints(pointsOnDeath); // we add some points to the score counter.
 				
@@ -125,7 +125,16 @@ namespace Bitboys.SuperPlaftormer2D {
 			}
 			if(this.gameObject.name==("Enemy"))
             {
-				yield return new WaitForSeconds(0);
+				GetComponent<WatermelonCatDamage>().enabled = false;
+				GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				foreach (Collider2D col in GetComponents<Collider2D>())
+				{
+					col.enabled = false;
+				}
+				/*//GetComponent<EnemyPatrol_Mobile>().enabled = false;
+				this.transform.parent.localScale=new Vector2(1,0.5f);
+				Debug.Log("Scale" + transform.parent.localScale);*/
+				yield return new WaitForSeconds(1);
 				Destroy(gameObject);// finally destroy this object.
 				Instantiate(deathEffect, transform.position, transform.rotation); // if the enemy dies we instantiate the death effect particles.
 			}

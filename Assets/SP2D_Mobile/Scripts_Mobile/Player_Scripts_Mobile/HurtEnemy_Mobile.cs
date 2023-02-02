@@ -36,7 +36,7 @@ public class HurtEnemy_Mobile : MonoBehaviour {
             {
 
                 other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
-               // transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
+                transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
 
             }
 			
