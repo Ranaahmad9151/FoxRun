@@ -329,7 +329,7 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 goUp = true;
                 myAnim.SetTrigger("GoUp");// Set the going up animation
-
+                //myAnim.SetBool("PlayerAttack", true);
             }
             else
             {
@@ -417,7 +417,8 @@ namespace Bitboys.SuperPlaftormer2D
             if (isGrounded)
                 doubleJumped = false;
             myAnim.SetBool("Grounded", isGrounded); // Set the idle animation.
-                                                    // if we are jumping or making a double jump the isgrounded function is set to false.
+            
+            // if we are jumping or making a double jump the isgrounded function is set to false.
             if (doubleJumped)
             {
                 isGrounded = false;

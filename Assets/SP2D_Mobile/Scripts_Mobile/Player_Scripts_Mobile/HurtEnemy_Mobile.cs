@@ -9,8 +9,8 @@ public class HurtEnemy_Mobile : MonoBehaviour {
 	[Range(0.0f, 25.0f)] // slide bar.
 	public float bounceOnEnemy = 18f; // the amount of bounce will make when we jump over an enemy.
 	private PlayerController_Mobile player;
-	// Use this for initialization
-	void Start () {
+		// Use this for initialization
+		void Start () {
 			player = FindObjectOfType<PlayerController_Mobile> ();
 			
 
@@ -22,13 +22,16 @@ public class HurtEnemy_Mobile : MonoBehaviour {
 	{
 		if (other.transform.tag == "Enemy" && player.falling && !player.goUp || other.transform.name == "FlyingEnemies" && player.falling && !player.goUp){
 
+				//player.myAnim.SetBool("PlayerAttack", true);
 				other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
 				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
 				
+
 			}
 		if (/*other.transform.tag == "Enemy" || */other.transform.name == "FlyingEnemies" && player.falling && !player.goUp){
 
 				other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
+				//player.myAnim.SetBool("PlayerAttack", true);
 				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
 
 		}
@@ -36,7 +39,8 @@ public class HurtEnemy_Mobile : MonoBehaviour {
             {
 
                 other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
-                transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
+				//player.myAnim.SetBool("PlayerAttack", true);
+				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
 
             }
 			
