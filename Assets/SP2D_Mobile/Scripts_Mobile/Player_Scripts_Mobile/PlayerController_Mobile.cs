@@ -34,6 +34,7 @@ namespace Bitboys.SuperPlaftormer2D
         public LayerMask whatIsGround; // We use this layer mask to tell the player what is ground and what is not.
         public bool isGrounded; // The bool that tells us when the player is grounded (true) or not (false).
         public bool doubleJumped; // The bool that tells us if the player is making a Double Jump.
+        public bool playerAttack;
         public Animator myAnim; // The Animator component of the Player.
 
 
@@ -322,10 +323,11 @@ namespace Bitboys.SuperPlaftormer2D
             else
             {
                 falling = false;
+               // playerAttack = false;
             }
 
             // Here we determine that if the player  vertical speed is bigger than 0, it's going up. 
-            if (GetComponent<Rigidbody2D>().velocity.y > 0.1 && !isGrounded)
+            if (GetComponent<Rigidbody2D>().velocity.y > 0.1 && !isGrounded&&!playerAttack)
             {
                 goUp = true;
                 myAnim.SetTrigger("GoUp");// Set the going up animation
@@ -335,7 +337,7 @@ namespace Bitboys.SuperPlaftormer2D
             {
                 goUp = false;
             }
-
+            
             //WALLS//////
             // if the player it's touching the Left  wall we activate the sticky animation and we ensure that the local scale is set to the right.
             if (touchingLeftWall == true)

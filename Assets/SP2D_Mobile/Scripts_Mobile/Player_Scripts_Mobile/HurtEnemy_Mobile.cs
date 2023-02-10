@@ -21,18 +21,21 @@ public class HurtEnemy_Mobile : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.transform.tag == "Enemy" && player.falling && !player.goUp || other.transform.name == "FlyingEnemies" && player.falling && !player.goUp){
-
+				player.playerAttack = true;
 				//player.myAnim.SetBool("PlayerAttack", true);
 				other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
-				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
-				
+				//transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
+				if (player.playerAttack)
+				{
+					player.myAnim.SetBool("PlayerAttack", true);
+				}
 
 			}
 		if (/*other.transform.tag == "Enemy" || */other.transform.name == "FlyingEnemies" && player.falling && !player.goUp){
 
 				other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
 				//player.myAnim.SetBool("PlayerAttack", true);
-				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
+				//transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
 
 		}
             if (other.transform.name == "Enemy" || other.transform.tag == "Fish")
@@ -40,7 +43,7 @@ public class HurtEnemy_Mobile : MonoBehaviour {
 
                 other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
 				//player.myAnim.SetBool("PlayerAttack", true);
-				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
+				//transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
 
             }
 			
