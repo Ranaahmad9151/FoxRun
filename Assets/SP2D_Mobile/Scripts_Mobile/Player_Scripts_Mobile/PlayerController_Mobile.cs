@@ -34,6 +34,7 @@ namespace Bitboys.SuperPlaftormer2D
         public LayerMask whatIsGround; // We use this layer mask to tell the player what is ground and what is not.
         public bool isGrounded; // The bool that tells us when the player is grounded (true) or not (false).
         public bool doubleJumped; // The bool that tells us if the player is making a Double Jump.
+        public bool playerAttack;
         public Animator myAnim; // The Animator component of the Player.
 
 
@@ -629,7 +630,6 @@ namespace Bitboys.SuperPlaftormer2D
             {
 
                 walking = true;
-                
             }
             else
             {
@@ -820,17 +820,20 @@ namespace Bitboys.SuperPlaftormer2D
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         // COLLISIONS AND TRIGGER FUNCTIONS // 
-
+        //public GameObject[] 
         void OnCollisionEnter2D(Collision2D coll)
         {
+            //Physics2D.OverlapAreaAll(0, 0, "Enemy");
             if (coll.transform.tag == ("Ground"))
             {
                 grounded = true;
+                //myAnim.SetBool("PlayerAttack", false);
                 StartCoroutine(WallsCollider());
             }
             if (coll.transform.tag == ("UpperGround") && !upperGrounded)
             {
                 upperGrounded = true;
+                //myAnim.SetBool("PlayerAttack", false);
                 StartCoroutine(WallsCollider());
             }
 

@@ -7,6 +7,7 @@ namespace Bitboys.SuperPlaftormer2D {
 	// This scripts handles the enemy's health.
 
 		public class EnemyHealthManager_Mobile : MonoBehaviour {
+		PlayerController_Mobile player;
 		public GameObject[] demageParticles;
 		public Animator enemyAnim;
 		//public static bool isFire=true;
@@ -69,6 +70,7 @@ namespace Bitboys.SuperPlaftormer2D {
 
 				}
 			}
+			
 		}
 
 
@@ -131,6 +133,7 @@ namespace Bitboys.SuperPlaftormer2D {
 				{
 					col.enabled = false;
 				}
+				
 				/*//GetComponent<EnemyPatrol_Mobile>().enabled = false;
 				this.transform.parent.localScale=new Vector2(1,0.5f);
 				Debug.Log("Scale" + transform.parent.localScale);*/

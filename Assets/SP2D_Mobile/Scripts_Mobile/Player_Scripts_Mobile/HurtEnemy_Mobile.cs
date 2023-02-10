@@ -22,9 +22,15 @@ public class HurtEnemy_Mobile : MonoBehaviour {
 	{
 		if (other.transform.tag == "Enemy" && player.falling && !player.goUp || other.transform.name == "FlyingEnemies" && player.falling && !player.goUp){
 
-				other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
+                other.gameObject.GetComponent<EnemyHealthManager_Mobile>().giveDamage(damageToGive);
+                /*player.playerAttack = true;
+                if (player.playerAttack)
+                {
+                    player.myAnim.SetBool("PlayerAttack", true);
+                }
+				*/
 				transform.parent.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.GetComponent<Rigidbody2D>().velocity.x, bounceOnEnemy);
-				
+
 			}
 		if (/*other.transform.tag == "Enemy" || */other.transform.name == "FlyingEnemies" && player.falling && !player.goUp){
 
@@ -41,9 +47,16 @@ public class HurtEnemy_Mobile : MonoBehaviour {
             }
 			
         }
-			
 
-	}
+        /*private void OnTriggerExit(Collider other)
+        {
+            if(other.transform.tag == "Enemy")
+			{
+					player.myAnim.SetBool("PlayerAttack", false);
+				player.walking = true;
+			}
+        }*/
+    }
 }
 ///////////////////////////////////////////////////////////////// SUPER PLATFORMER 2D by Bitboys ///////////////////////////////////////////////////////////////////////////////////////////////
 
