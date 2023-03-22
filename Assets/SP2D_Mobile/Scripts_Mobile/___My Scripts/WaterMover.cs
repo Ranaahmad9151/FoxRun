@@ -12,15 +12,16 @@ public class WaterMover : MonoBehaviour
 
     private void Animate()
     {
-        if (mat.mainTextureOffset.y < 100000)
+        //mat.mainTextureOffset += new Vector2(0, -0.1f * speed);
+        if (mat.mainTextureOffset.y < 10000)
         {
-            mat.mainTextureOffset += new Vector2(0, -0.1f*speed);
+            mat.mainTextureOffset += new Vector2(0, -0.1f * speed);
         }
-        if (mat.mainTextureOffset.y >= 100000)
+        if (mat.mainTextureOffset.y >= 10000)
         {
             mat.mainTextureOffset = Vector2.zero;
         }
-        
+
     }
 
  
