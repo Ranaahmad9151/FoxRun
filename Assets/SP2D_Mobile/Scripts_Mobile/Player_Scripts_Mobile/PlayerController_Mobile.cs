@@ -19,7 +19,7 @@ namespace Bitboys.SuperPlaftormer2D
 
 
         // CHARACTER CONTROLLER VARIABLES//
-
+        private Vector3 playerCheckpointPosition;
         public bool isInGame;
         public bool controllerActive; // This function enables or disables the gamepad, if it's activated will can control the character with booth gamepad and keyboard. If it's disabled we can only use the keyboard.
         public Transform playerGraphics; // The Character Sprites.
@@ -263,7 +263,8 @@ namespace Bitboys.SuperPlaftormer2D
         public GameObject[] wallTags;
         private void Start()
         {
-           wallTags = GameObject.FindGameObjectsWithTag("Wall");
+            
+            wallTags = GameObject.FindGameObjectsWithTag("Wall");
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -721,7 +722,7 @@ namespace Bitboys.SuperPlaftormer2D
             //This bool will be activated when the character has collected all the gems.
             if (redDiamond == true && blueDiamond == true && greenDiamond == true && lilaDiamond == true && yellowDiamond == true)
             {
-                allGemsCollected = true;
+                //allGemsCollected = true;
             }
             else
             {
@@ -914,11 +915,20 @@ namespace Bitboys.SuperPlaftormer2D
             }
 
         }
-
+        /*public void PlayerCheckPointPosition()
+        {
+            playerCheckpointPosition = transform.position;
+            transform.position = playerCheckpointPosition;
+        }*/
         // if the player collides with a gem we automatically activate the bool function of each gem that we touch.
         
         void OnTriggerEnter2D(Collider2D other)
         {
+            /*if(other.CompareTag("mushroom"))
+            {
+                PlayerCheckPointPosition();
+                print("Checkpoint");
+            }*/
             // if the player is placed over the object that have this script, automatically will be within a door zone.
             if (other.transform.tag == "Door")
             {

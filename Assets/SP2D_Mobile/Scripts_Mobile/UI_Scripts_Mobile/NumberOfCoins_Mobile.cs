@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG.Tweening.Core.Easing;
 
 namespace Bitboys.SuperPlaftormer2D {
 
@@ -14,10 +15,19 @@ namespace Bitboys.SuperPlaftormer2D {
 	
 	void Start () 
 	{
-		text = GetComponent<Text> ();
-
-		score = 0;
-	}
+            /*if (PlayerPrefs.HasKey("PlayerLive"))
+            {
+                GameManager.instance.livesCountText.text = PlayerPrefs.GetInt("PlayerLive").ToString();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("PlayerLive", 5);
+                GameManager.instance.livesCountText.text = PlayerPrefs.GetInt("PlayerLive").ToString();
+            }*/
+            text = GetComponent<Text> ();
+			score = PlayerPrefs.GetInt("Coins");
+        //score = 0;
+    }
 
 	void Update () 
 	{
@@ -28,11 +38,18 @@ namespace Bitboys.SuperPlaftormer2D {
 	public static void AddPoints (int NumberOfCoins)
 	{
 		score += NumberOfCoins;
-	}
+
+        score = PlayerPrefs.GetInt("Coins") + NumberOfCoins;
+        PlayerPrefs.SetInt("Coins", score);
+            
+    }
 	public static void Reset()
 	{
 		score = 0;
-}
+	}
+
+
+		
 }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

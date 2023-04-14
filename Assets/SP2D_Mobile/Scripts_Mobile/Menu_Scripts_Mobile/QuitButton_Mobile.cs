@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 namespace Bitboys.SuperPlaftormer2D {
 	
 	public class QuitButton_Mobile : MonoBehaviour {
+	
 
 	public void QuitGame(){
 

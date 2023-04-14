@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Security.Policy;
 
 namespace Bitboys.SuperPlaftormer2D {
 
@@ -12,17 +13,29 @@ namespace Bitboys.SuperPlaftormer2D {
 		[Range(0, 5)]    // Slide bar.
 		public int changeSceneDelay = 1;// the delay until the level changes.
 
-
+		public GameObject buyPopUp;
         private void Start()
         {
-			/*if (PlayerPrefs.GetInt("Lock") < LevelNumber)
+
+			if (!PlayerPrefs.HasKey("PlayerCurrentLives"))
+			{
+				PlayerPrefs.SetInt("PlayerCurrentLives", 4);
+			}
+            /*if (PlayerPrefs.GetInt("Lock") < LevelNumber)
 			{
 				PlayerPrefs.SetInt("Lock", LevelNumber);
 			}*/
-		}
+        }
         public void loadScene(){
+			if(PlayerPrefs.GetInt("PlayerCurrentLives")> 0)
+			{
+				StartCoroutine (WaitForLoad ()); // the time we will wait before to load the scene.
 
-			StartCoroutine (WaitForLoad ()); // the time we will wait before to load the scene.
+			}
+			else
+			{
+				buyPopUp.SetActive(true);
+			}
 
 		}
 		public IEnumerator WaitForLoad()
@@ -32,6 +45,11 @@ namespace Bitboys.SuperPlaftormer2D {
 			LevelNumber = LevelNum;
 			Debug.Log (LevelNum);
 		}
-	}
+        public void PlayerLives()
+        {
+            PlayerPrefs.SetInt("PlayerCurrentLives", 4);
+			loadScene();
+        }
+    }
 }
 ///////////////////////////////////////////////////////////////// SUPER PLATFORMER 2D by Bitboys ///////////////////////////////////////////////////////////////////////////////////////////////

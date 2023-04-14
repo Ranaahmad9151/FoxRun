@@ -29,7 +29,8 @@ namespace Bitboys.SuperPlaftormer2D {
 		public Scene scene;
 		private void Start()
         {
-			scene = SceneManager.GetActiveScene();
+            player=FindObjectOfType<PlayerController_Mobile>();
+            scene = SceneManager.GetActiveScene();
 			if (this.gameObject.name=="Boss")
             {
                 HealthBar.instance.slider.maxValue = enemyHealth;
@@ -124,6 +125,7 @@ namespace Bitboys.SuperPlaftormer2D {
 				yield return new WaitForSeconds(3);
 				Destroy(gameObject);// finally destroy this object.
 				Instantiate(deathEffect, transform.position, transform.rotation); // if the enemy dies we instantiate the death effect particles.
+				player.allGemsCollected = true;
 			}
 			if(this.gameObject.name==("Enemy"))
             {

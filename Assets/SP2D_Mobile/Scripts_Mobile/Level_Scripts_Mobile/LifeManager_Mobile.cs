@@ -47,7 +47,7 @@ namespace Bitboys.SuperPlaftormer2D {
 		{
 			yield return new WaitForSeconds (0.5f);
 			player.gameObject.SetActive(false);
-			ResetLives ();
+			//ResetLives ();
 			GameObject.Find ("MenuCanvas").transform.GetChild (2).gameObject.SetActive (true);
 			GameObject.Find ("HUD").SetActive (false);
 			GameObject.Find ("MenuCanvas").transform.GetChild (1).gameObject.SetActive (false);
@@ -67,11 +67,11 @@ namespace Bitboys.SuperPlaftormer2D {
 		PlayerPrefs.SetInt ("PlayerCurrentLives", lifeCounter);// stores the current lives in the player prefs.
 	}
 
-		public void ResetLives ()
-		{
-			lifeCounter = 4;
-			PlayerPrefs.SetInt ("PlayerCurrentLives", lifeCounter); // stores the current lives in the player prefs.
-		}
-}
+        public void ResetLives()
+        {
+            lifeCounter = 4;
+            PlayerPrefs.SetInt("PlayerCurrentLives", lifeCounter); // stores the current lives in the player prefs.
+        }
+    }
 }
 ///////////////////////////////////////////////////////////////// SUPER PLATFORMER 2D by Bitboys ///////////////////////////////////////////////////////////////////////////////////////////////

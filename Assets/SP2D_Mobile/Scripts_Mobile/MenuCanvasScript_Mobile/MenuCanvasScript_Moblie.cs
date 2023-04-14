@@ -16,8 +16,19 @@ public class MenuCanvasScript_Moblie : MonoBehaviour {
 
 	public void ReplayButton()
 	{
-			StartCoroutine (FindObjectOfType<Door_Mobile> ().GoLevel ());
-			Time.timeScale = 1;
+			if(PlayerPrefs.GetInt("Coins")>10)
+			{
+				NumberOfCoins_Mobile.AddPoints(-10);
+                PlayerPrefs.SetInt("PlayerCurrentLives", 4); // stores the current lives in the player prefs.
+                StartCoroutine (FindObjectOfType<Door_Mobile> ().GoLevel ());
+				Time.timeScale = 1;
+
+			}
+			else
+			{
+                StartCoroutine(LevelFail());
+                Time.timeScale = 1;
+            }
 	}
 
 	public void NextLevelButton()
@@ -41,5 +52,6 @@ public class MenuCanvasScript_Moblie : MonoBehaviour {
 			//SceneManager.LoadScene (levelToLoad); // we load the scene.
 			SceneManager.LoadSceneAsync (levelToLoad);
 		}
+		
 }
 }
