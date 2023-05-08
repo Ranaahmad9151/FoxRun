@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using System.Security.Policy;
+//using System.Security.Policy;
 
 namespace Bitboys.SuperPlaftormer2D {
 

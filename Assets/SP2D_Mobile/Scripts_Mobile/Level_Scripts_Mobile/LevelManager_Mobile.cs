@@ -8,7 +8,9 @@ namespace Bitboys.SuperPlaftormer2D {
 
 	public class LevelManager_Mobile : MonoBehaviour {
 
-	public GameObject currentCheckPoint; // The level star check point object/prefab.
+	
+	//public GameObject currentCheckPoint; // The level star check point object/prefab.
+	private CheckPointManager _checkPointManager;
 	private PlayerController_Mobile player; // Here we call the script that controls the player.
 	public GameObject deathParticle; // The Particle prefab spawned when the player dies.
     public GameObject respawnEffect; // The respawn particle prefab spawned when the player appears again in the scene.
@@ -47,6 +49,8 @@ namespace Bitboys.SuperPlaftormer2D {
 	public float vortexSfxVolume = 1f; // the vortex sound effect volume amount.
 	public GameObject vortexCloseEffect; // the effect prefab that appears when the vortex closes.
 
+	
+
 	void Awake () {
 			
 		// The script references to find with the names that previously we named the variables.
@@ -56,10 +60,11 @@ namespace Bitboys.SuperPlaftormer2D {
 		checkpoints= FindObjectOfType<CheckPoint_Mobile> ();
 		glitchCharacter= FindObjectOfType<GlitchedCharacter_Mobile> ();
 		dolly = FindObjectOfType<DollyZoom_Mobile> ();
+		_checkPointManager = FindObjectOfType<CheckPointManager>();
 
 
-	// Here we call the Weapons Scripts to make use of them.
-		weapon1 = FindObjectOfType<Weapon1_Mobile> ();
+		// Here we call the Weapons Scripts to make use of them.
+			weapon1 = FindObjectOfType<Weapon1_Mobile> ();
 		weapon2 = FindObjectOfType<Weapon2_Mobile> ();
 		weapon3 = FindObjectOfType<Weapon3_Mobile> ();
 		weapon4 = FindObjectOfType<Weapon4_Mobile> ();
@@ -71,7 +76,12 @@ namespace Bitboys.SuperPlaftormer2D {
 			}
 	}
 		// Update is called once per frame
-		void Update () {	
+		void Update () 
+		{
+			//if(_checkPointManager.spawnPointIsAvailable)
+   //         {
+			//	currentCheckPoint = _checkPointManager.mushroomCheckPoint;
+   //         }
 			// VORTEX INTRO FALSE //
 			//If the open vortex bool hosted on the player controller script is deactivated, the vortex will not open.
 			if (player.vortexIntro == false && player.isInGame == true ) {
@@ -160,7 +170,7 @@ namespace Bitboys.SuperPlaftormer2D {
 		// Here is the respawn coroutine and all the steps taken since the player dies and until it returns to be spawned on the last checkpoint.
 	public IEnumerator RespawnPlayerCo()
 	{
-			GameObject.Find ("Fader").GetComponent<Fading_Mobile> ().BeginFade (1); // Activates the camera fade effect when the player dies.
+		GameObject.Find ("Fader").GetComponent<Fading_Mobile> ().BeginFade (1); // Activates the camera fade effect when the player dies.
 		player.enabled = false; // turn of the player to avoid after death.
 		player.gameObject.SetActive(false); // set the entire player object to false.
 		dolly.dollyZoom = false; // disable the main camera dolly zoom effect.
@@ -191,11 +201,14 @@ namespace Bitboys.SuperPlaftormer2D {
 
 
 
-
-		player.transform.position = currentCheckPoint.transform.position; // after being regenerated we appear at the last checkpoint for which we have passed.
+		//currentCheckPoint = _checkPointManager.mushroomCheckPoint;
+		player.transform.position = _checkPointManager.respawnPoint.transform.position; // after being regenerated we appear at the last checkpoint for which we have passed.
 		player.knockbackCounter = 0; // Sets the knockback counter to cero.
 		player.enabled = true; // reactivate the player.
 		player.gameObject.SetActive(true);// sets active the player object.
+
+		//player.transform.position = _checkPointManager.mushroomCheckPoint.transform.position; // after being regenerated we appear at the last checkpoint for which we have passed.
+		//player.transform.position = currentCheckPoint.transform.position; // after being regenerated we appear at the last checkpoint for which we have passed.
 		player.transform.Find ("PlayerGraphics").GetComponent<SpriteRenderer>().enabled = true; // Set active the player sprite renderer component.
 		player.transform.Find ("PlayerGraphics").localScale = new Vector3(1, 1, 1); // Set the graphics scale to their normal size.
 		player.transform.localScale = new Vector3(1, 1, 1); // Adjust the horizontal scale of the player to look to the right whenever it is respawned.

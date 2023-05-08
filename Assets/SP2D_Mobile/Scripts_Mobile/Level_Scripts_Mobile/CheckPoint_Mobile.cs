@@ -22,7 +22,7 @@ namespace Bitboys.SuperPlaftormer2D {
 	{
 		if (other.name == "Player") 
 		{
-			levelManager.currentCheckPoint = this.gameObject;
+			//levelManager.currentCheckPoint = this.gameObject;
 			Debug.Log ("Activated Checkpoint" + transform.position);
 
 			desactivatedCheck.SetActive(false);
