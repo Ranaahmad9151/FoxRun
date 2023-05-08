@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 namespace Bitboys.SuperPlaftormer2D
 {
@@ -171,7 +172,7 @@ namespace Bitboys.SuperPlaftormer2D
         public GameObject waterEnterParticles;
         public GameObject waterParticles;
         public Transform waterEffects;
-
+        public AreaEffector2D[] areaOfAffector;
         void Awake()
         {
 
@@ -263,7 +264,10 @@ namespace Bitboys.SuperPlaftormer2D
         public GameObject[] wallTags;
         private void Start()
         {
-            
+            if(SceneManager.GetActiveScene().name.Contains("Level 2_Mobile"))
+            {
+                areaOfAffector = FindObjectsOfType<AreaEffector2D>();
+            }
             wallTags = GameObject.FindGameObjectsWithTag("Wall");
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1173,6 +1177,29 @@ namespace Bitboys.SuperPlaftormer2D
            wallCheck = true;
             
         }
+
+        public void OnMouseDown()
+        {
+            foreach (var item in areaOfAffector)
+            {
+                item.forceMagnitude = 50;
+            }
+        }
+        public void OnMouseUp()
+        {
+            foreach (var item in areaOfAffector)
+            {
+                item.forceMagnitude = 15;
+            }
+        }
+        /*public void DownButton()
+        {
+            foreach (var item in areaOfAffector)
+            {
+                item.forceMagnitude = 50;
+            }
+
+        }*/
     }
    
 }

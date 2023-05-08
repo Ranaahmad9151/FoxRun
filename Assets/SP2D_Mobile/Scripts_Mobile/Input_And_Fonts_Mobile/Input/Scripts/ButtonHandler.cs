@@ -13,14 +13,13 @@ namespace UnityStandardAssets.CrossPlatformInput
 
         void OnEnable()
         {
-
         }
 
         public void SetDownState()
         {
             CrossPlatformInputManager.SetButtonDown(Name);
 			this.gameObject.GetComponent<Image> ().sprite = pressedButton;
-
+            
         }
 
 
