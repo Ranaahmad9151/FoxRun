@@ -264,10 +264,10 @@ namespace Bitboys.SuperPlaftormer2D
         public GameObject[] wallTags;
         private void Start()
         {
-            if(SceneManager.GetActiveScene().name.Contains("Level 2_Mobile"))
+            /*if(SceneManager.GetActiveScene().name.Contains("Level 2_Mobile"))
             {
                 areaOfAffector = FindObjectsOfType<AreaEffector2D>();
-            }
+            }*/
             wallTags = GameObject.FindGameObjectsWithTag("Wall");
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1183,13 +1183,15 @@ namespace Bitboys.SuperPlaftormer2D
             foreach (var item in areaOfAffector)
             {
                 item.forceMagnitude = 50;
+                print("Mouse Down");
             }
         }
         public void OnMouseUp()
         {
             foreach (var item in areaOfAffector)
             {
-                item.forceMagnitude = 15;
+                item.forceMagnitude = 6;
+                print("Mouse Up");
             }
         }
         /*public void DownButton()

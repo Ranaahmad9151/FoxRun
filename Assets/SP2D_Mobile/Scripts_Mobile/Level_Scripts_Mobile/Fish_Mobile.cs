@@ -15,7 +15,18 @@ namespace Bitboys.SuperPlaftormer2D {
 	public LayerMask whatIsWall;// We use this layer mask to tell the fish what is a wall and what is not.
 	private bool hittinWall;// this determines if the fish is touching a wall.
 
-	void FixedUpdate () {
+
+        public void Start()
+        {
+			print("Start Pos: " + this.transform.position);
+        }
+
+		public void Update()
+        {
+			print("Update Pos: " + this.transform.position);
+        }
+
+        void FixedUpdate () {
 
 		hittinWall = Physics2D.OverlapCircle (wallCheck.position, wallCheckRadius, whatIsWall);
 

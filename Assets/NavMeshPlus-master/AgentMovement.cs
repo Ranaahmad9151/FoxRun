@@ -15,16 +15,24 @@ namespace Bitboys.SuperPlaftormer2D
             agent.updateUpAxis = false;
         }
         // Start is called before the first frame update
-        void Start()
+        public void Start()
         {
-
+            if(this.name == "Fish1" || this.name == "Fish2")
+            {
+                print(this.name + "'s " + "Start Pos: " + this.transform.position);
+            }
         }
+
 
         // Update is called once per frame
         void Update()
         {
             SetTargetPosition();
             SetAgentPosition();
+            if (this.name == "Fish1" || this.name == "Fish2")
+            {
+                print(this.name + "'s " + "Update Pos: " + this.transform.position);
+            }
         }
         void SetTargetPosition()
         {
