@@ -18,7 +18,7 @@ public class MenuCanvasScript_Moblie : MonoBehaviour {
 	{
 			if(PlayerPrefs.GetInt("Coins")>10)
 			{
-				NumberOfCoins_Mobile.AddPoints(-10);
+				//NumberOfCoins_Mobile.AddPoints(-10);
                 PlayerPrefs.SetInt("PlayerCurrentLives", 4); // stores the current lives in the player prefs.
                 StartCoroutine (FindObjectOfType<Door_Mobile> ().GoLevel ());
 				Time.timeScale = 1;
