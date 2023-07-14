@@ -7,6 +7,7 @@ namespace Bitboys.SuperPlaftormer2D {
 
 	public class Door_Mobile : MonoBehaviour {
 
+		//public BattleSound battleSound;
 		private PlayerController_Mobile player; // Here we call the script that controls the player.
 		public bool playerInZone; // We use this variable to know if the player is within an area that activates the gateway for travel between scenes.
 		public string levelToLoad; // In this space we will indicate the scene name of the level wich we want to travel.
@@ -50,7 +51,11 @@ namespace Bitboys.SuperPlaftormer2D {
 			playerInZone = false; // we will ensure that this variable is disabled when the level starts.
 
 	}
-	
+	void start()
+        {
+			//battleSound = FindObjectOfType<BattleSound>();
+
+		}
 	
 	// Update is called once per frame
 	void Update () {
@@ -209,7 +214,8 @@ namespace Bitboys.SuperPlaftormer2D {
 
 			int LevelNumber = FindObjectOfType<LevelIndicator_Mobile> ().LevelNumber;
 			Debug.Log (LevelNumber);
-			GorillaThrowRocks.instance.gamePlaySound.Pause();
+			//GorillaThrowRocks.instance.gamePlaySound.Pause();
+			//BattleSound.gamePlaySound.Pause();
 			levelCompleteMusic.Play();
 			if (PlayerPrefs.GetInt ("Lock") < LevelNumber)
 			{

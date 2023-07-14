@@ -14,15 +14,14 @@ namespace Bitboys.SuperPlaftormer2D
         public bool isAnimationChange;
         public Scene scene;
         public FirePooling bossFire;
-        public AudioSource bettleZoneSound;
-        public AudioSource gamePlaySound;
+        
         private void Awake()
         {
             instance = this;
         }
         void Start()
         {
-            gamePlaySound.Play();
+            
             demage.SetActive(true);
             scene = SceneManager.GetActiveScene();
         }
@@ -41,8 +40,8 @@ namespace Bitboys.SuperPlaftormer2D
         {
             if (collision.CompareTag("Player"))
             {
-                bettleZoneSound.Play();
-                gamePlaySound.Pause();
+                //bettleZoneSound.Play();
+                //gamePlaySound.Pause();
                 demage.SetActive(false);
                 bossFire = this.GetComponentInParent<FirePooling>();
             }
@@ -63,8 +62,8 @@ namespace Bitboys.SuperPlaftormer2D
         {
             if (collision.gameObject.tag == "Player")
             {
-                bettleZoneSound.Pause();
-                gamePlaySound.Play();
+                //bettleZoneSound.Pause();
+                //gamePlaySound.Play();
                 demage.SetActive(true);
                 isAnimationChange = false;
                 FirePooling.instance.RemoveFirePool();
