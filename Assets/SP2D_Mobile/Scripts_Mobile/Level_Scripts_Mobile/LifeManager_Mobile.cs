@@ -25,13 +25,16 @@ namespace Bitboys.SuperPlaftormer2D {
 		player = FindObjectOfType<PlayerController_Mobile> ();
 
 	}
-	
-	// When the player dies the "Game Over" screen is activated.
-	void Update () {
+        private void Start()
+        {
+			ResetLives();
+        }
+        // When the player dies the "Game Over" screen is activated.
+        void Update () {
 			
 		
 
-			theText.text = "x " + lifeCounter; // the text component displays the amount of lives that the player has
+			theText.text = "x" + lifeCounter; // the text component displays the amount of lives that the player has
 
 			// This makes reset the game when the player has no lives.
 			if (lifeCounter < 0)
@@ -69,8 +72,9 @@ namespace Bitboys.SuperPlaftormer2D {
 
         public void ResetLives()
         {
-            lifeCounter = 4;
+            lifeCounter = 10;
             PlayerPrefs.SetInt("PlayerCurrentLives", lifeCounter); // stores the current lives in the player prefs.
+			print("Life Counters " + lifeCounter);
         }
     }
 }

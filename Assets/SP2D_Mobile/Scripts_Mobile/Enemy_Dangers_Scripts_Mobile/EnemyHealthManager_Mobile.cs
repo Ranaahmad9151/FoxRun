@@ -141,7 +141,7 @@ namespace Bitboys.SuperPlaftormer2D
                 {
                     col.enabled = false;
                 }
-
+                
                 /*//GetComponent<EnemyPatrol_Mobile>().enabled = false;
 				this.transform.parent.localScale=new Vector2(1,0.5f);
 				Debug.Log("Scale" + transform.parent.localScale);*/
