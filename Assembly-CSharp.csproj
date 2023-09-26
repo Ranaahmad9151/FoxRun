@@ -92,6 +92,7 @@
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Objects_Scripts_Mobile\ZoomFadingObject_Mobile.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Effects\Gradient.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Weapons_Scripts_Mobile\Weapon1_Mobile.cs" />
+    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\FIshAttack.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Input_And_Fonts_Mobile\Input\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\___SLICING\__My Assets\Sounds\SingeltonBase.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Menu_Scripts_Mobile\PauseMenu_Mobile.cs" />
@@ -391,7 +392,6 @@
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\GorillaThrowRocks.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Door_Mobile.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Level_Scripts_Mobile\Fish_Mobile.cs" />
-    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\FIshAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Help Me!\unity-ui-extensions\Shaders\UIAdditive.shader" />

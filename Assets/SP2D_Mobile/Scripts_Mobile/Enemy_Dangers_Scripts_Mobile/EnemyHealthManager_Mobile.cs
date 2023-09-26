@@ -123,11 +123,11 @@ namespace Bitboys.SuperPlaftormer2D
                     this.gameObject.GetComponent<Transform>().position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y - 7 * Time.deltaTime * 0.3f);
                     this.GetComponent<AgentMovement>().enabled = false;
                 }
-                /*if (scene.name == "Level 5_Mobile")
+                if (scene.name == "Level 5_Mobile")
                 {
                     this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                     this.GetComponent<FlyingEnemiesGroup_Mobile>().enabled = false;
-                }*/
+                }
                 yield return new WaitForSeconds(3);
                 Destroy(gameObject);// finally destroy this object.
                 Instantiate(deathEffect, transform.position, transform.rotation); // if the enemy dies we instantiate the death effect particles.
