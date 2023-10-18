@@ -41,24 +41,33 @@ namespace Bitboys.SuperPlaftormer2D
         }
         void SetAgentPosition()
         {
-            agent.SetDestination(target.transform.position);
+            try
+            {
+                agent.SetDestination(target.transform.position);
 
-            if (this.transform.position.x < target.transform.position.x)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-                if (this.name == "Boss")
+                if (this.transform.position.x < target.transform.position.x)
                 {
-                    GorillaThrowRocks.instance.isMoveRight = false;
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
+                    if (this.name == "Boss")
+                    {
+                        GorillaThrowRocks.instance.isMoveRight = false;
+                    }
+                }
+                else
+                {
+                    transform.localScale = new Vector3(1f, 1f, 1f);
+                    if (this.name == "Boss")
+                    {
+                        GorillaThrowRocks.instance.isMoveRight = true;
+                    }
                 }
             }
-            else
+            catch (System.Exception e)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-                if (this.name == "Boss")
-                {
-                    GorillaThrowRocks.instance.isMoveRight = true;
-                }
+                Debug.Log(e);
+                //throw;
             }
+            
         }
     }
 }

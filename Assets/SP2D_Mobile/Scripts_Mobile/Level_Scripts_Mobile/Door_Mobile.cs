@@ -80,7 +80,7 @@ namespace Bitboys.SuperPlaftormer2D {
 			}
 
 			if (openDoor == true) {
-				vortexSound.gameObject.SetActive (true);// The glitched character will be deactivated wile the open vortex option is false.
+				//vortexSound.gameObject.SetActive (true);// The glitched character will be deactivated wile the open vortex option is false.
 
 			} else {
 				vortexSound.gameObject.SetActive(false);// The glitched character will be deactivated wile the open vortex option is false.
@@ -213,13 +213,15 @@ namespace Bitboys.SuperPlaftormer2D {
 			GameObject.Find ("MenuCanvas").transform.GetChild (1).gameObject.SetActive (true);
 
 			int LevelNumber = FindObjectOfType<LevelIndicator_Mobile> ().LevelNumber;
-			Debug.Log (LevelNumber);
+			LevelNumber += 1;
+			Debug.Log("Level Unlock "+ LevelNumber);
 			//GorillaThrowRocks.instance.gamePlaySound.Pause();
-			battleSound.gamePlaySound.Pause();
+			//battleSound.gamePlaySound.Pause();
 			levelCompleteMusic.Play();
 			if (PlayerPrefs.GetInt ("Lock") < LevelNumber)
 			{
 				PlayerPrefs.SetInt ("Lock", LevelNumber);
+				print("Lock Level " + LevelNumber);
 			}
 
 			// the delay until the level changes.

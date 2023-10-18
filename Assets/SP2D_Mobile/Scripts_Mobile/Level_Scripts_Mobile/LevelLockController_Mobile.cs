@@ -13,32 +13,33 @@ public class LevelLockController_Mobile : MonoBehaviour {
 	void Start ()
 	{
 		ButtonPerant = GameObject.Find (PerantName);
-		/*LockNumber = PlayerPrefs.GetInt ("Lock");
+        LockNumber = PlayerPrefs.GetInt("Lock");
 
-		if (LockNumber >= LastNumber) 
-		{
-			LockNumber = LastNumber - 1;
-		}
-		Debug.Log (LockNumber); 
-		for (int i=0; i <= LockNumber; i++) 
-		{
-			Locks [i].gameObject.SetActive (false);
-		}
-
-
-
-		// if Buttons are not in proper shape like triangle etc
-		for (int i=LockNumber+1; i <= Locks.Length-1; i++) 
-		{
-			ButtonPerant.transform.GetChild (i).GetComponent<Button> ().interactable = false;
-		}*/
+        if (LockNumber >= LastNumber)
+        {
+            LockNumber = LastNumber - 1;
+        }
+        Debug.Log(LockNumber);
+        for (int i = 0; i <= LockNumber; i++)
+        {
+            Locks[i].gameObject.SetActive(false);
+        }
 
 
-		// My Code
-		LockNumber = 6;
+
+        // if Buttons are not in proper shape like triangle etc
+        for (int i = LockNumber + 1; i <= Locks.Length - 1; i++)
+        {
+            ButtonPerant.transform.GetChild(i).GetComponent<Button>().interactable = false;
+        }
+
+
+        // My Code
+        LockNumber = 0;
 		for (int i = 0; i <= LockNumber; i++)
 		{
 			Locks[i].gameObject.SetActive(false);
+			print("Lock Level " + LockNumber);
 		}
 
 	}
