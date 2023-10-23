@@ -7,6 +7,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 {
 	public class AxisTouchButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
+		public GameObject enemiesDemageObject;
 		public static AxisTouchButton instance;
 		// designed to work in a pair with another axis touch button
 		// (typically with one having -1 and one having 1 axisValues)
@@ -67,6 +68,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public void OnPointerDown(PointerEventData data)
 		{
+
+			enemiesDemageObject.SetActive(true);
 			//isPressed = true;
 			if (m_PairedWith == null)
 			{
@@ -81,6 +84,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public void OnPointerUp(PointerEventData data)
 		{
+
+			 enemiesDemageObject.SetActive(false);
 			//isPressed = false;
 			m_Axis.Update(Mathf.MoveTowards(m_Axis.GetValue, 0, responseSpeed * Time.deltaTime));
 			this.gameObject.GetComponent<Image> ().sprite = nonPressedButton;

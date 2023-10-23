@@ -959,6 +959,13 @@ namespace Bitboys.SuperPlaftormer2D
                 tokenParticles.gameObject.GetComponent<ParticleSystem>().Play();
 
 
+            if (other.transform.tag == "Key")
+            {
+                allGemsCollected = true;
+                //tokenParticles.gameObject.GetComponent<ParticleSystem>().Play();
+
+            }
+
             // INS SLOPE FREEZZE//
             // this collision warns us that we are in an slope in order to freeze the character motion and not begin to slide down the slope.
             if (other.transform.tag == ("Slope"))
@@ -1170,16 +1177,15 @@ namespace Bitboys.SuperPlaftormer2D
         public void LeftButton()
         {
            wallCheck=true;
-
         }
         public void RightButton()
         {
            wallCheck = true;
-            
         }
-
+        
         public void OnMouseDown()
         {
+            
             foreach (var item in areaOfAffector)
             {
                 item.forceMagnitude = 50;
@@ -1202,6 +1208,7 @@ namespace Bitboys.SuperPlaftormer2D
             }
 
         }*/
+        
     }
    
 }

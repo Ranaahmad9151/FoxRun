@@ -28,6 +28,7 @@ namespace Bitboys.SuperPlaftormer2D
         private static Shake_Mobile shakeController;
         public GameObject detection;
         public GameObject catEnemy;
+        public GameObject keyForSpaceShip;
         public Scene scene;
 
 
@@ -127,11 +128,15 @@ namespace Bitboys.SuperPlaftormer2D
                 {
                     this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                     this.GetComponent<FlyingEnemiesGroup_Mobile>().enabled = false;
+                    keyForSpaceShip.SetActive(true);
                 }
                 yield return new WaitForSeconds(3);
                 Destroy(gameObject);// finally destroy this object.
                 Instantiate(deathEffect, transform.position, transform.rotation); // if the enemy dies we instantiate the death effect particles.
-                player.allGemsCollected = true;
+                if (scene.name != "Level 5_Mobile")
+                {
+                    player.allGemsCollected = true;
+                }
             }
             if (this.gameObject.name == ("Enemy"))
             {

@@ -960,6 +960,14 @@
       <Project>{599F4071-4F4A-E041-D2BF-7A32024BE48E}</Project>
       <Name>Unity.Recorder</Name>
     </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{488935E8-4F48-7669-D185-AE1659E86445}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{07A42D24-33A9-C6DD-F2EE-A5D1191BE1F7}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
