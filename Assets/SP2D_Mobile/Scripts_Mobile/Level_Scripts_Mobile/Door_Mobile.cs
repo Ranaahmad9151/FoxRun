@@ -46,6 +46,7 @@ namespace Bitboys.SuperPlaftormer2D
         public GameObject greenGem;
         public GameObject lvl5CutScene;
         public GameObject lvl5UIForCutScene;
+        public GameObject lvl5UIHUDForCutScene;
         //public Scene scene;
 
 
@@ -269,6 +270,7 @@ namespace Bitboys.SuperPlaftormer2D
                 yield return new WaitForSeconds(0.001f); // the delay until the level changes.
                 print("Current level" + SceneManager.GetActiveScene().name);
                 lvl5UIForCutScene.SetActive(false);
+                lvl5UIHUDForCutScene.SetActive(false);
                 lvl5CutScene.SetActive(true);
                 yield return new WaitForSeconds(9);
                 spawnTraveller = true;

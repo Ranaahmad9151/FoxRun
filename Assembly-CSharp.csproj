@@ -93,8 +93,8 @@
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Effects\Gradient.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Weapons_Scripts_Mobile\Weapon1_Mobile.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\___My Scripts\FIshAttack.cs" />
-    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Input_And_Fonts_Mobile\Input\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\___SLICING\__My Assets\Sounds\SingeltonBase.cs" />
+    <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Input_And_Fonts_Mobile\Input\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\SP2D_Mobile\Scripts_Mobile\Menu_Scripts_Mobile\PauseMenu_Mobile.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Controls\ReorderableList\ReorderableList.cs" />
     <Compile Include="Assets\Help Me!\unity-ui-extensions\Scripts\Utilities\NonDrawingGraphic.cs" />
@@ -1193,6 +1193,10 @@
       <Project>{7A45CEDF-FCFB-D2E7-624C-E0198B4884A1}</Project>
       <Name>Unity.Analytics.DataPrivacy</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{07A42D24-33A9-C6DD-F2EE-A5D1191BE1F7}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Analytics.csproj">
       <Project>{040D8497-A5F9-B118-F669-EFE3D185AADC}</Project>
       <Name>Unity.Services.Core.Analytics</Name>
@@ -1200,6 +1204,10 @@
     <ProjectReference Include="UnityEngine.Purchasing.SecurityCore.csproj">
       <Project>{A6582059-69A0-D6DA-DF0F-90D992A2AEFF}</Project>
       <Name>UnityEngine.Purchasing.SecurityCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{488935E8-4F48-7669-D185-AE1659E86445}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.Purchasing.Codeless.csproj">
       <Project>{635A1FE2-5102-8CA3-7155-93B7BB4C18B2}</Project>
@@ -1244,14 +1252,6 @@
     <ProjectReference Include="Unity.Recorder.csproj">
       <Project>{599F4071-4F4A-E041-D2BF-7A32024BE48E}</Project>
       <Name>Unity.Recorder</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{488935E8-4F48-7669-D185-AE1659E86445}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{07A42D24-33A9-C6DD-F2EE-A5D1191BE1F7}</Project>
-      <Name>Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

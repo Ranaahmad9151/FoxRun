@@ -13,8 +13,8 @@ public class CollisonManeger : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D trigger)
 	{
-		Debug.Log ("Show Tutorial Collison");
-		FindObjectOfType<TutorialManeger>().StartTutorial(trigger.gameObject.name);
+		//Debug.Log ("Show Tutorial Collison");
+		//FindObjectOfType<TutorialManeger>().StartTutorial(trigger.gameObject.name);
 		
 //		if ( trigger.name = ")
 //			{
